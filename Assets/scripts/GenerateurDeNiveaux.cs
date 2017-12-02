@@ -25,7 +25,6 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 			for (byte y = hauteur; y > 0; y--) 
 				positions.Add (new Vector3 (x, y, 0f));
 			
-		
 		generation ();
 	}
 	private void generation()
