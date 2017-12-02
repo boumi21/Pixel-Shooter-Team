@@ -21,6 +21,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 	private List<Vector3> positions = new List<Vector3>();
 	[HideInInspector]public GameObject carte;
 
+	public GameObject persoPrinc;
 	public GameObject coin;
 	public GameObject dragron;
 	public GameObject grass;
@@ -49,6 +50,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 		placerDecorations ();
 		placerEnemys ();
 		placerCoins ();
+		placerPersoPrinc ();
 	}
 	private void placerSol()
 	{
@@ -116,8 +118,9 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 		for (int i = quantiterBlockers; i > 0; i--) 
 		{
 			Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-			Instantiate(blockers[Random.Range(0, blockers.Length)], emplacement, Quaternion.identity);
+			GameObject instance = Instantiate(blockers[Random.Range(0, blockers.Length)], emplacement, Quaternion.identity);
 			positions.Remove (emplacement);
+			instance.transform.parent = carte.transform;
 		}
 	}
 	private void placerDecorations()
@@ -125,8 +128,9 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 		for (int i = quantiterDecorations; i > 0; i--) 
 		{
 			Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-			Instantiate(decorations[Random.Range(0, decorations.Length)], emplacement, Quaternion.identity);
+			GameObject instance = Instantiate(decorations[Random.Range(0, decorations.Length)], emplacement, Quaternion.identity);
 			positions.Remove (emplacement);
+			instance.transform.parent = carte.transform;
 		}
 	}
 	private void placerEnemys ()
@@ -153,8 +157,15 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 		for (int i = quantiterCoins; i > 0; i--) 
 		{
 			Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-			Instantiate(coin, emplacement, Quaternion.identity);
+			GameObject instance = Instantiate(coin, emplacement, Quaternion.identity);
 			positions.Remove (emplacement);
+			instance.transform.parent = carte.transform;
 		}
+	}
+	private void placerPersoPrinc()
+	{
+		Vector3 emplacement = positions[Random.Range (0, positions.Count)];
+		Instantiate(persoPrinc, emplacement, Quaternion.identity);
+		positions.Remove (emplacement);
 	}
 }
