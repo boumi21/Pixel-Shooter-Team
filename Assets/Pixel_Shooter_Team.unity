@@ -108,6 +108,22 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &762750552 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1309325056219838, guid: 3b26b140213a0574780e000561308048,
+    type: 2}
+  m_PrefabInternal: {fileID: 1243498835}
+--- !u!114 &762750553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762750552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc417fbcf10b664aaefc249dcfdc553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1127030214
 Prefab:
   m_ObjectHideFlags: 0
@@ -117,11 +133,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4969485573109000, guid: 22f2b98d5ef7a7e42a7f2cd60bff2372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.884
+      value: 0.814
       objectReference: {fileID: 0}
     - target: {fileID: 4969485573109000, guid: 22f2b98d5ef7a7e42a7f2cd60bff2372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.102
+      value: 0.172
       objectReference: {fileID: 0}
     - target: {fileID: 4969485573109000, guid: 22f2b98d5ef7a7e42a7f2cd60bff2372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -151,6 +167,10 @@ Prefab:
         type: 2}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713871309789400, guid: 22f2b98d5ef7a7e42a7f2cd60bff2372, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22f2b98d5ef7a7e42a7f2cd60bff2372, type: 2}
@@ -193,6 +213,15 @@ Prefab:
     - target: {fileID: 4165036497234294, guid: 3b26b140213a0574780e000561308048, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61663890686195836, guid: 3b26b140213a0574780e000561308048,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309325056219838, guid: 3b26b140213a0574780e000561308048, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b26b140213a0574780e000561308048, type: 2}
@@ -330,6 +359,10 @@ Prefab:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1329855080766130, guid: 96025c65e3b0fbc46bb7f4be7e5f520c, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96025c65e3b0fbc46bb7f4be7e5f520c, type: 2}
   m_IsPrefabParent: 0
@@ -342,11 +375,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4903661111857490, guid: 64faa66f54d142d49b212d57c66ce750, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.601
+      value: 0.959
       objectReference: {fileID: 0}
     - target: {fileID: 4903661111857490, guid: 64faa66f54d142d49b212d57c66ce750, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.127
+      value: 0.415
       objectReference: {fileID: 0}
     - target: {fileID: 4903661111857490, guid: 64faa66f54d142d49b212d57c66ce750, type: 2}
       propertyPath: m_LocalPosition.z
@@ -376,6 +409,10 @@ Prefab:
         type: 2}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913276958060680, guid: 64faa66f54d142d49b212d57c66ce750, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64faa66f54d142d49b212d57c66ce750, type: 2}

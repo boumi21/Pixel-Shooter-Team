@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 212537429755382076}
   - component: {fileID: 95608510542916126}
   - component: {fileID: 61378293664368016}
+  - component: {fileID: 114754576350962524}
+  - component: {fileID: 114384043326248156}
   m_Layer: 8
   m_Name: ChauveSouris
-  m_TagString: Ennemi
+  m_TagString: ChauveSouris
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +86,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114384043326248156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713871309789400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76631bb86f8521440880d34b60680584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114754576350962524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713871309789400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd0ebe2346c044d86df6108f91a69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212537429755382076
 SpriteRenderer:
   m_ObjectHideFlags: 1

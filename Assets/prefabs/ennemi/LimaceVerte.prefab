@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 212118739407823934}
   - component: {fileID: 95086884885830872}
   - component: {fileID: 61233441916122452}
+  - component: {fileID: 114517696992568320}
+  - component: {fileID: 114561674806087898}
   m_Layer: 8
   m_Name: LimaceVerte
-  m_TagString: Ennemi
+  m_TagString: LimaceVerte
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +86,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114517696992568320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913276958060680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd0ebe2346c044d86df6108f91a69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114561674806087898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913276958060680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76631bb86f8521440880d34b60680584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212118739407823934
 SpriteRenderer:
   m_ObjectHideFlags: 1

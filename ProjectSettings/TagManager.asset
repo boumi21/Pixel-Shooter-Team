@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ennemi
   - BouleFeu
+  - LimaceVerte
+  - Dragon
+  - ChauveSouris
   layers:
   - Default
   - TransparentFX
@@ -39,6 +42,7 @@ TagManager:
   - 
   - 
   - 
-  - name: background
-    uniqueID: 3450419537
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
     locked: 0

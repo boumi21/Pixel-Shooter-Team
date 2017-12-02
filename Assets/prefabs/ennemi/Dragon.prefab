@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 95715034433486864}
   - component: {fileID: 212012815907072678}
   - component: {fileID: 61170086181410384}
+  - component: {fileID: 114781219388149832}
+  - component: {fileID: 114338005172692110}
   m_Layer: 8
   m_Name: Dragon
-  m_TagString: Ennemi
+  m_TagString: Dragon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +86,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114338005172692110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329855080766130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76631bb86f8521440880d34b60680584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114781219388149832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329855080766130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd0ebe2346c044d86df6108f91a69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212012815907072678
 SpriteRenderer:
   m_ObjectHideFlags: 1
