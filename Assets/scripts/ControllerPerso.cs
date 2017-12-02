@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerPersonnage : MonoBehaviour {
+public class ControllerPerso : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
