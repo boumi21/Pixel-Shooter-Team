@@ -7,10 +7,11 @@ public class Dragon : Monstre
     public GameObject personnage;
     public bool heroEstCibler = false;
     public GameObject bouleDeFeu;
-    private float vitesseDuTir = 400f;
-    private float cadenceDeTir = 3f;
+    private float vitesseDuTir = 900f;
+    private float cadenceDeTir = 1f;
     private float startTime;
     private bool faireFeu = true;
+    public int compteurDeTir = 0;
 	void Start()
     {
         base.Start();
@@ -19,27 +20,11 @@ public class Dragon : Monstre
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
-        startTime = Time.deltaTime;
-        if(heroEstCibler)
-        {
-           
 
-            if (faireFeu)
-                cracherFeu();
-            else if (startTime >= cadenceDeTir)
-            {
-                startTime = 0;
-                faireFeu = true;
-            }
-        }
-
-	}
 
     void OnTriggerEnter(Collider obj)
     {
-        if(obj == personnage)
+        if(obj.gameObject.tag == "personnage")
         {
             heroEstCibler = true;
         }
@@ -50,15 +35,45 @@ public class Dragon : Monstre
     private void cracherFeu()
     {
         faireFeu = false;
-
-        Rigidbody body = bouleDeFeu.GetComponent<Rigidbody>();
-         Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
+        compteurDeTir++;
+        
+         GameObject projectile = Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
+         Rigidbody body = projectile.GetComponent<Rigidbody>();
 
          body.AddForce(this.transform.forward * vitesseDuTir);
     }
 
     void OnTriggerStay(Collider obj)
     {
+        if(obj.gameObject.tag == "personnage")
+        {
+            heroEstCibler = true;
+        }
+    }
+
+    void OnTriggerExit(Collider obj)
+    {
+        if (obj.gameObject.tag == "personnage")
+        {
+            heroEstCibler = false;
+        }
+    }
+
+    void Update()
+    {
+        startTime = Time.deltaTime;
+        if (heroEstCibler)
+        {
+
+
+            if (faireFeu)
+                cracherFeu();
+            else if (startTime >= cadenceDeTir)
+            {
+                startTime = 0;
+                faireFeu = true;
+            }
+        }
 
     }
 }
