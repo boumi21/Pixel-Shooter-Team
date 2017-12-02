@@ -115,51 +115,38 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_LocalPosition.x
       value: 12.62819
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_LocalPosition.y
       value: 6.2592087
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
+    - target: {fileID: 4549560408568614, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705990862512442, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 95827929213365234, guid: 66949b32d9c378049b74ca4ad7a8c177,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 4b811411979d77346bf273ce25f7d30e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66949b32d9c378049b74ca4ad7a8c177, type: 2}
   m_IsPrefabParent: 0
@@ -190,7 +177,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c63918f80b86bd489b1f6a7dbc44eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hauteur: 20
+  longueur: 30
+  quantiterLake: 3
+  quantiterCoins: 10
+  quantiterEnemys: 10
+  quantiterDragons: 2
+  quantiterBlockers: 50
+  quantiterDecorations: 150
   carte: {fileID: 0}
+  coin: {fileID: 0}
+  dragron: {fileID: 0}
+  grass: {fileID: 1198681778212238, guid: af490f277ee16e84dae2eeb301dbe48a, type: 2}
+  enemys: []
+  lake: []
   blockers:
   - {fileID: 1233430527974242, guid: e638330c6686c1e4ab42da5b58ad8612, type: 2}
   - {fileID: 1375401822681704, guid: 9ede9c522d3e5404f90fe090c0bfa014, type: 2}
@@ -204,7 +204,6 @@ MonoBehaviour:
   - {fileID: 1153261788426420, guid: ead2a2e7e91c940429931c36e8d34426, type: 2}
   - {fileID: 1924119268808552, guid: 16d59c4862e6dd046a2edd26fe7b74fe, type: 2}
   - {fileID: 1735494151366156, guid: eb4b2e838696d574ba797da1f76dbef7, type: 2}
-  grass: {fileID: 1198681778212238, guid: af490f277ee16e84dae2eeb301dbe48a, type: 2}
   mur:
   - {fileID: 0}
   - {fileID: 0}
