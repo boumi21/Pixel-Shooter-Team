@@ -72,6 +72,5 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 			}
 		GameObject un = Instantiate (mur [0], new Vector3 (0, 21, 0f), Quaternion.identity);
 		GameObject deux = Instantiate (mur [0], new Vector3 (0, 21, 0f), Quaternion.identity);
-
 	}
 }
