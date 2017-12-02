@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ennemi
   - BouleFeu
+  - Undefined
+  - personnage
   layers:
   - Default
   - TransparentFX
