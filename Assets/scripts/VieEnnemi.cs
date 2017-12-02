@@ -8,10 +8,7 @@ public class VieEnnemi : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (this.gameObject.tag == "Dragon")
-            this.vie += 3;
-        else if (this.gameObject.tag == "LimaceVerte")
-            this.vie++;
+
     }
 
     // Update is called once per frame
@@ -25,9 +22,9 @@ public class VieEnnemi : MonoBehaviour
         if (collider.gameObject.tag == "BouleFeu")
             perdreVie();
 
-        Destroy(this);
+        //Destroy(this.gameObject);
     }
-    public void perdreVie()
+    void perdreVie()
     {
         vie--;
     }
