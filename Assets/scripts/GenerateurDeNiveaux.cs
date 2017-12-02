@@ -17,6 +17,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 	public GameObject[] blockers;
 	public GameObject[] decorations;
 	public GameObject grass;
+	public GameObject[] mur;
 
 	void Start ()
 	{
@@ -30,6 +31,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 	private void generation()
 	{
 		placerSol ();
+		placerMur ();
 	}
 	private void placerSol()
 	{
@@ -38,5 +40,38 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 			GameObject instance = Instantiate (grass, place, Quaternion.identity);
 			instance.transform.SetParent (carte.transform);
 		}
+	}
+	private void placerMur()
+	{
+		longueur++;
+		for (byte x = 2; x > 0; x--)
+			for (byte y = hauteur; y > 0; y--) 
+			{
+				if (x == 2) 
+				{
+					GameObject instance = Instantiate (mur [1], new Vector3 (31, y, 0f), Quaternion.identity);
+					instance.transform.parent = carte.transform;
+				} else 
+				{
+					GameObject instance = Instantiate (mur [1], new Vector3 (0, y, 0f), Quaternion.identity);
+					instance.transform.parent = carte.transform;
+				}
+			}
+		for (byte y = 2; y > 0; y--)
+			for (byte x = longueur; x > 0; x--) 
+			{
+				if (y == 2) 
+				{
+					GameObject instance = Instantiate (mur [0], new Vector3 (x, 21, 0f), Quaternion.identity);
+					instance.transform.parent = carte.transform;
+				} else 
+				{
+					GameObject instance = Instantiate (mur [0], new Vector3 (x, 0, 0f), Quaternion.identity);
+					instance.transform.parent = carte.transform;
+				}
+			}
+		GameObject un = Instantiate (mur [0], new Vector3 (0, 21, 0f), Quaternion.identity);
+		GameObject deux = Instantiate (mur [0], new Vector3 (0, 21, 0f), Quaternion.identity);
+
 	}
 }
