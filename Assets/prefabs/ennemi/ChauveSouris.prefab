@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4969485573109000}
   - component: {fileID: 212537429755382076}
   - component: {fileID: 95608510542916126}
-  - component: {fileID: 114350030773397522}
   - component: {fileID: 114965220448591428}
   - component: {fileID: 65419811446678346}
   - component: {fileID: 54337849666115206}
+  - component: {fileID: 114687955891182560}
   m_Layer: 8
   m_Name: ChauveSouris
   m_TagString: Ennemi
@@ -89,7 +89,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114350030773397522
+--- !u!114 &114687955891182560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,10 +97,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713871309789400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f0129529d64ab4bbbe720aad4064fe, type: 3}
+  m_Script: {fileID: 11500000, guid: ba25b5b561b95a64cbf3cd719c482116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vie: 1
 --- !u!114 &114965220448591428
 MonoBehaviour:
   m_ObjectHideFlags: 1

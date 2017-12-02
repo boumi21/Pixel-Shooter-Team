@@ -18,9 +18,14 @@ public class ControleProjectile : MonoBehaviour
     }
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "BouleFeu")
-            collider.SendMessage("perdreVie");
+        if (collider.GetComponent<Monstre>() != null)
+        {
+            collider.GetComponent<Monstre>().perdreVie();
+            Destroy(this.gameObject);
+        }
 
-        Destroy(this.gameObject);
+            
+
+       
     }
 }

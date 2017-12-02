@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212118739407823934}
   - component: {fileID: 95086884885830872}
   - component: {fileID: 61233441916122452}
-  - component: {fileID: 114703884022699382}
   - component: {fileID: 114512191183938724}
+  - component: {fileID: 114813824328297632}
   m_Layer: 8
   m_Name: LimaceVerte
   m_TagString: Ennemi
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114703884022699382
+--- !u!114 &114813824328297632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,10 +105,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1913276958060680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f0129529d64ab4bbbe720aad4064fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a2dea053c2afeb43a7b0396dde9812a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vie: 1
+  vie: 2
 --- !u!212 &212118739407823934
 SpriteRenderer:
   m_ObjectHideFlags: 1

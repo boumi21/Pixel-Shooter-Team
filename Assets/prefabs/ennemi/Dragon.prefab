@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4734724497609516}
   - component: {fileID: 95715034433486864}
   - component: {fileID: 212012815907072678}
-  - component: {fileID: 61170086181410384}
   - component: {fileID: 114048126517339854}
-  - component: {fileID: 114251540217255802}
+  - component: {fileID: 114009253700500296}
+  - component: {fileID: 54351125505629296}
+  - component: {fileID: 65923348378800914}
   m_Layer: 8
   m_Name: Dragon
   m_TagString: Ennemi
@@ -44,31 +45,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61170086181410384
-BoxCollider2D:
+--- !u!54 &54351125505629296
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329855080766130}
-  m_Enabled: 1
-  m_Density: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65923348378800914
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329855080766130}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.004, y: -0.01}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.13, y: 0.14}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.16, y: 0.16, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95715034433486864
 Animator:
   serializedVersion: 3
@@ -86,6 +89,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114009253700500296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329855080766130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de99292e825f00d43bf67eda2c71d397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vie: 4
 --- !u!114 &114048126517339854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,18 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114251540217255802
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1329855080766130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f0129529d64ab4bbbe720aad4064fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vie: 1
 --- !u!212 &212012815907072678
 SpriteRenderer:
   m_ObjectHideFlags: 1
