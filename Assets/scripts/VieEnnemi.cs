@@ -20,8 +20,14 @@ public class VieEnnemi : MonoBehaviour
 		if (vie <= 0)
 			Destroy (this.gameObject);
 	}
-
-	void perdreVie()
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "BouleFeu")
+            perdreVie();
+       
+        Destroy(this);
+    }
+	public void perdreVie()
 	{
 		vie--;
 	}
