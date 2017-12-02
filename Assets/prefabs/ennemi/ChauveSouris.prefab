@@ -9,52 +9,52 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1913276958060680}
+  m_RootGameObject: {fileID: 1713871309789400}
   m_IsPrefabParent: 1
---- !u!1 &1913276958060680
+--- !u!1 &1713871309789400
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4903661111857490}
-  - component: {fileID: 212118739407823934}
-  - component: {fileID: 95086884885830872}
-  - component: {fileID: 61233441916122452}
+  - component: {fileID: 4969485573109000}
+  - component: {fileID: 212537429755382076}
+  - component: {fileID: 95608510542916126}
+  - component: {fileID: 61378293664368016}
   m_Layer: 8
-  m_Name: LimaceVerte
+  m_Name: ChauveSouris
   m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4903661111857490
+--- !u!4 &4969485573109000
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913276958060680}
+  m_GameObject: {fileID: 1713871309789400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.759, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61233441916122452
+--- !u!61 &61378293664368016
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913276958060680}
+  m_GameObject: {fileID: 1713871309789400}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.016}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -65,31 +65,31 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.13}
+  m_Size: {x: 0.13, y: 0.13}
   m_EdgeRadius: 0
---- !u!95 &95086884885830872
+--- !u!95 &95608510542916126
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913276958060680}
+  m_GameObject: {fileID: 1713871309789400}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 479fef4cadc83e54dabd7f987136b556, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0ea81f3da3cac234b9e6abdfeed6cf29, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &212118739407823934
+--- !u!212 &212537429755382076
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913276958060680}
+  m_GameObject: {fileID: 1713871309789400}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 58144cc087474476d909ebe7e3b713f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b84386882802d1d479c0c47913c511fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
