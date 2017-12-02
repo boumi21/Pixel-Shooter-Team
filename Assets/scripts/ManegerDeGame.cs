@@ -23,8 +23,7 @@ public class ManegerDeGame : MonoBehaviour {
 	{
 		score++;
 		if (score % 10 == 0)
-			fail ();
-			
+			fail ();	
 	}
 	public void prendreDegat()
 	{
