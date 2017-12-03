@@ -108,6 +108,112 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &191115344 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1482170550348462, guid: 2dce9ee931e076345a494e18ede9c713,
+    type: 2}
+  m_PrefabInternal: {fileID: 331837672}
+--- !u!114 &191115345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191115344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185d727cc72d0c54ba52c7bc75f2a17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit: {fileID: 8300000, guid: b79ddb6ce90c84a448c88c5d44455512, type: 3}
+  coin: {fileID: 8300000, guid: e417b8f59a2dd634a9829ec699c9b998, type: 3}
+  sources:
+  - {fileID: 191115346}
+  - {fileID: 191115349}
+--- !u!82 &191115346 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82393702835762690, guid: 2dce9ee931e076345a494e18ede9c713,
+    type: 2}
+  m_PrefabInternal: {fileID: 331837672}
+--- !u!82 &191115349
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191115344}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &331837672
 Prefab:
   m_ObjectHideFlags: 0
@@ -147,6 +253,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82393702835762690, guid: 2dce9ee931e076345a494e18ede9c713,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7915e2f5db83e474d87a4ebf304f4d9c, type: 3}
+    - target: {fileID: 82393702835762690, guid: 2dce9ee931e076345a494e18ede9c713,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2dce9ee931e076345a494e18ede9c713, type: 2}
   m_IsPrefabParent: 0
@@ -162,7 +278,6 @@ GameObject:
   - component: {fileID: 794151325}
   - component: {fileID: 794151324}
   - component: {fileID: 794151323}
-  - component: {fileID: 794151328}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -240,14 +355,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &794151328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 794151322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185d727cc72d0c54ba52c7bc75f2a17f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

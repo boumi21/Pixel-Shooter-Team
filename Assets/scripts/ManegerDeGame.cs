@@ -10,8 +10,13 @@ public class ManegerDeGame : MonoBehaviour {
 	private int score = 0;
 	private int noDeLevel = 0;
 
+	public AudioClip hit;
+	public AudioClip coin;
 
+	public AudioSource[] sources;
 	public static ManegerDeGame game =  null;
+
+
 	void Awake()
 	{
 		if (game == null)
@@ -24,12 +29,16 @@ public class ManegerDeGame : MonoBehaviour {
 		score++;
 		if (score % 10 == 0)
 			fail ();	
+		sources [1].clip = coin;
+		sources [1].Play();
 	}
 	public void prendreDegat()
 	{
 		vie--;
 		if(vie <= 0)
 			gagner();
+		sources [1].clip = hit;
+		sources [1].Play();
 	}
 	private void fail()
 	{
@@ -38,6 +47,7 @@ public class ManegerDeGame : MonoBehaviour {
 	private void gagner()
 	{
 		EditorSceneManager.LoadScene (1);
+		noDeLevel++;
 	}
 	void Start () 
 	{
