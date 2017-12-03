@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.SceneManagement;
-
+using UnityEngine.UI;
 
 public class ManegerDeGame : MonoBehaviour {
 
 	private int vie =  5;
 	private int score = 0;
 	private int noDeLevel = 0;
+
+	public Text vieT;
+	public Text scoreT;
 
 	public AudioClip hit;
 	public AudioClip coin;
@@ -52,5 +55,7 @@ public class ManegerDeGame : MonoBehaviour {
 	void Start () 
 	{
 		DontDestroyOnLoad (this);
+		vieT.text = vie + " vie restantes";
+		scoreT.text = score + " points";
 	}
 }
