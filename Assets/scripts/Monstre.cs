@@ -6,25 +6,41 @@ public class Monstre : MonoBehaviour
 {
     public GameObject personnage;
     public bool directionDroite = true;
-    protected bool heroEstCibler = false;
+    public bool heroEstCibler = false;
     public float posMonstre = 0;
     public float posPerso = 0;
     public float difference = 0;
     public int vie = 1;
+    public AudioSource sonCri;
     // Use this for initialization
     protected void Start()
     {
-        Debug.Log("VieEnnemi Start");
-        posMonstre = this.transform.position.x;
-        posPerso = personnage.transform.position.x;
-        difference = posMonstre - posPerso;
+       sonCri = this.GetComponent<AudioSource>();
+       posMonstre = this.transform.position.x;
+       posPerso = personnage.transform.position.x;
+       difference = posMonstre - posPerso;
       
     }
 
-    void OnTriggerCollider2D(Collider2D obj)
+    void OnTriggerEnter2D(Collider2D obj)
     {
         if(obj.gameObject.tag == "personnage")
         {
+            heroEstCibler = true;
+            sonCri.Play();
+            posMonstre = this.transform.position.x;
+            posPerso = personnage.transform.position.x;
+            difference = posMonstre - posPerso;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D obj)
+    {
+
+        if (obj.gameObject.tag == "personnage")
+        {
+            heroEstCibler = true;
+
             posMonstre = this.transform.position.x;
             posPerso = personnage.transform.position.x;
             difference = posMonstre - posPerso;
@@ -44,7 +60,14 @@ public class Monstre : MonoBehaviour
          if (vie <= 0)
             Destroy(this.gameObject);
     }
- 
+
+    void OnTriggerExit2D(Collider2D obj)
+    {
+        if (obj.gameObject.tag == "personnage")
+        {
+            heroEstCibler = false;
+        }
+    }
     public void perdreVie()
     {
         vie--;
@@ -53,8 +76,10 @@ public class Monstre : MonoBehaviour
     void tourne()
     {
         Vector3 scale = this.transform.localScale;
-
-        scale.x *= -1;
+        if (!directionDroite && heroEstCibler)
+        {
+            scale.x *= -1;
+        }
     }
 
 }
