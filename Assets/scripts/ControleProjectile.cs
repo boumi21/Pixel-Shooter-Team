@@ -8,7 +8,7 @@ public class ControleProjectile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Destroy(this.gameObject, 3);
+        Destroy(this.gameObject, 4);
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class ControleProjectile : MonoBehaviour
     }
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.GetComponent<Monstre>() != null)
+        if (collider.gameObject.tag == "personnage")
         {
             collider.GetComponent<Monstre>().perdreVie();
             Destroy(this.gameObject);

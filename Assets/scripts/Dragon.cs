@@ -16,13 +16,14 @@ public class Dragon : Monstre
     {
         base.Start();
         Debug.Log("un Dragon start");
+        startTime = 0;
         
 	}
 	
 	// Update is called once per frame
 
 
-    void OnTriggerEnter(Collider obj)
+    void OnTriggerEnter2D(Collider2D obj)
     {
         if(obj.gameObject.tag == "personnage")
         {
@@ -36,14 +37,15 @@ public class Dragon : Monstre
     {
         faireFeu = false;
         compteurDeTir++;
-        
-         GameObject projectile = Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
-         Rigidbody body = projectile.GetComponent<Rigidbody>();
+        Vector2 chuLa = personnage.transform.position;
+        GameObject projectile = (GameObject)Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
+        Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
 
-         body.AddForce(this.transform.forward * vitesseDuTir);
+        body.AddForceAtPosition(this.transform.up, chuLa);
+        //body.AddForce(this.transform.eulerAngles * vitesseDuTir);
     }
 
-    void OnTriggerStay(Collider obj)
+    void OnTriggerStay2D(Collider2D obj)
     {
         if(obj.gameObject.tag == "personnage")
         {
@@ -51,7 +53,7 @@ public class Dragon : Monstre
         }
     }
 
-    void OnTriggerExit(Collider obj)
+    void OnTriggerExit2D(Collider2D obj)
     {
         if (obj.gameObject.tag == "personnage")
         {
@@ -61,10 +63,10 @@ public class Dragon : Monstre
 
     void Update()
     {
-        startTime = Time.deltaTime;
+        startTime += Time.deltaTime;
         if (heroEstCibler)
         {
-
+            Quaternion rotation = Quaternion.LookRotation(personnage.transform.position - this.transform.position);
 
             if (faireFeu)
                 cracherFeu();
