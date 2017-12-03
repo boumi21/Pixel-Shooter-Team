@@ -21,7 +21,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 	private List<Vector3> positions = new List<Vector3>();
 	[HideInInspector]public GameObject carte;
 	[HideInInspector]public List<GameObject> listePath = new List<GameObject>();
-	[HideInInspector] public GameObject joueur;
+	[HideInInspector] public  List <GameObject> joueur;
 
 	public GameObject pathPoint;
 	public GameObject persoPrinc;
