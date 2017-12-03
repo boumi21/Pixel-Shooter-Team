@@ -21,6 +21,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 	private List<Vector3> positions = new List<Vector3>();
 	[HideInInspector]public GameObject carte;
 	[HideInInspector]public List<GameObject> listePath = new List<GameObject>();
+	[HideInInspector] public GameObject joueur;
 
 	public GameObject pathPoint;
 	public GameObject persoPrinc;
@@ -53,7 +54,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 		spawner (quantiterEnemys, enemys);
 		spawner (quantiterDragons, dragon);
 		spawner (quantiterCoins, coin);
-		spawner (1, persoPrinc);
+		joueur = spawner (1, persoPrinc);
 		listePath = spawner (quantiterPointsPath, pathPoint);
 	}
 	private void placerSol()
