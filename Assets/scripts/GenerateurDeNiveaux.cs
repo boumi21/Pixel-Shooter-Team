@@ -40,7 +40,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 		for (byte x = longueur; x > 0; x--)
 			for (byte y = hauteur; y > 0; y--) 
 				positions.Add (new Vector3 (x, y, 0f));
-			
+		
 		generation ();
 	}
 	private void generation()
