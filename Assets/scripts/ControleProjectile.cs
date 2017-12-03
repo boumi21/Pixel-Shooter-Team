@@ -23,10 +23,7 @@ public class ControleProjectile : MonoBehaviour
         {
             collider.GetComponent<Monstre>().perdreVie();
             Destroy(this.gameObject);
-        }
-
-            
-
-       
+        }      
     }
+
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Dragon : Monstre
 {
-    public GameObject personnage;
-    public bool heroEstCibler = false;
+
     public GameObject bouleDeFeu;
     private float vitesseDuTir = 900f;
     private float cadenceDeTir = 1f;
     private float startTime;
+   
     private bool faireFeu = true;
     public int compteurDeTir = 0;
 	void Start()
@@ -18,7 +18,7 @@ public class Dragon : Monstre
         Debug.Log("un Dragon start");
         startTime = 0;
         
-	}
+    }
 	
 	// Update is called once per frame
 
@@ -29,19 +29,29 @@ public class Dragon : Monstre
         {
             heroEstCibler = true;
         }
-            
-        
+     
     }
-
+    //GameObject projectile = (GameObject)
     private void cracherFeu()
     {
         faireFeu = false;
         compteurDeTir++;
         Vector2 chuLa = personnage.transform.position;
-        GameObject projectile = (GameObject)Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
-        Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
+        Vector2 directBoule = bouleDeFeu.transform.localScale;
+        if(difference < 0)
+        {
+            Instantiate(bouleDeFeu, new Vector2(this.transform.position.x - 1, this.transform.position.y), Quaternion.identity);
+            directBoule.x *= -1;
+        }
+        else
+        {
+            Instantiate(bouleDeFeu, new Vector2(this.transform.position.x + 1, this.transform.position.y), Quaternion.identity);
+            //directBoule.x *= -1;
+        }
+        Rigidbody2D body = bouleDeFeu.GetComponent<Rigidbody2D>();
 
-        body.AddForceAtPosition(this.transform.up, chuLa);
+        //projectile.transform.Translate(chuLa);
+        body.AddForceAtPosition(Vector3.right * 1000, transform.position);
         //body.AddForce(this.transform.eulerAngles * vitesseDuTir);
     }
 
@@ -66,8 +76,6 @@ public class Dragon : Monstre
         startTime += Time.deltaTime;
         if (heroEstCibler)
         {
-            Quaternion rotation = Quaternion.LookRotation(personnage.transform.position - this.transform.position);
-
             if (faireFeu)
                 cracherFeu();
             else if (startTime >= cadenceDeTir)
