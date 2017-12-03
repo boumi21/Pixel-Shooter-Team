@@ -8,7 +8,7 @@ public class PathFindingPerso : MonoBehaviour
 {
 	Grille grille;//notre objet grille qui va contenir notre grille de tuiles représentant notre monde
 	public Transform depart;//références aux gameObjects rajoutés directement en drag n drop dans l'éditeur de Unity.
-	public Transform arrivee;
+	private Vector3 target;
 
 	void Awake()
 	{//pour que ça marche, il faut que le script Grille soit rattaché au même GameObject que le script PathFinding
@@ -17,7 +17,14 @@ public class PathFindingPerso : MonoBehaviour
 
 	void Update()
 	{
-		trouverChemin (depart.position, arrivee.position);
+		if (Input.GetMouseButtonDown (0)) {
+			target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			target.z = transform.position.z;
+			print ("incroyable");
+		} else {
+		}
+		print (target.z);
+		trouverChemin (depart.position, target);
 	}
 	/// <summary>
 	/// Méthode appelée depuis le OnDrawGizmos de la classe Grille 
@@ -40,6 +47,7 @@ public class PathFindingPerso : MonoBehaviour
 	{//on trouve les noeuds associés à nos positions
 		Noeud noeudDepart = grille.noeudVsPoint (startPos);
 		Noeud noeudArrivee = grille.noeudVsPoint (targetPos);
+		print ("Je passe");
 
 		List<Noeud> openList = new List<Noeud> ();
 		List<Noeud> closedList = new List<Noeud> ();

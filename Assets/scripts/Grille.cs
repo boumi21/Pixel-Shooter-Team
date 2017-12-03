@@ -25,6 +25,7 @@ public class Grille : MonoBehaviour
 	private int dimensionGrilleX, dimensionGrilleY; //dimensions de notre grille en X et Y.
 	public Transform player;
 	public List<Noeud> chemin; //notre chemin déterminé par l,algorithme A*.  Il est public car on va le remplir à partir d'un autre script
+	public Vector3 target;
 
 	void Start()
 	{
@@ -33,6 +34,10 @@ public class Grille : MonoBehaviour
 		dimensionGrilleY = Mathf.RoundToInt(generation.hauteur / diametreNoeud);
 
 		construireGrille ();
+	}
+
+	void Update(){
+		
 	}
 	/// <summary>
 	/// Cette méthode va construire notre grille de noeud 
@@ -118,9 +123,15 @@ public class Grille : MonoBehaviour
 		PathFindingPerso pathFindingPerso = GetComponent<PathFindingPerso> (); 
 
 		GameObject depart = GameObject.Find ("personnage"); //trouve le joueur qui est le point de départ
+		if (Input.GetMouseButtonDown (0)) {
+			target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			target.z = transform.position.z;
+		} else {
+		}
 		//GameObject arrivee = Input.mousePosition; //trouve l'arrivée
 		//on demande à la classe Pathfinding de trouver le chemin
-		pathFindingPerso.trouverCheminGizmos (depart.transform.position, Input.mousePosition, this);
+		print (depart.transform.position);
+		pathFindingPerso.trouverCheminGizmos (depart.transform.position, target, this);
 
 		if (grille != null) //si la grille a bel et bien été créé
 		{
