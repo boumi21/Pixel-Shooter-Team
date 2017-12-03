@@ -14,8 +14,10 @@ public class Dragon : Monstre
     public int compteurDeTir = 0;
 	void Start()
     {
+        Vector3 chuLa = personnage.transform.position;
+        Instantiate(bouleDeFeu, chuLa, Quaternion.identity);
         base.Start();
-        Debug.Log("un Dragon start");
+        //Debug.Log("un Dragon start");
         startTime = 0;
         
     }
@@ -24,29 +26,27 @@ public class Dragon : Monstre
 
 
 
-    //GameObject projectile = (GameObject)
+   
     private void cracherFeu()
     {
         faireFeu = false;
-        compteurDeTir++;
+        //compteurDeTir++;
         Vector2 chuLa = personnage.transform.position;
         Vector2 directBoule = bouleDeFeu.transform.localScale;
-        if(difference < 0)
-        {
-            Instantiate(bouleDeFeu, new Vector2(this.transform.position.x - 1, this.transform.position.y), Quaternion.identity);
-            directBoule.x *= -1;
-        }
-        else
+   
+        GameObject projectile = (GameObject)Instantiate(bouleDeFeu,chuLa, Quaternion.identity);
+        directBoule.x *= -1;
+        //new Vector2(this.transform.position.x - 2, this.transform.position.y)
+
+      /*  else
         {
             Instantiate(bouleDeFeu, new Vector2(this.transform.position.x + 1, this.transform.position.y), Quaternion.identity);
             //directBoule.x *= -1;
-        }
-        Rigidbody2D body = bouleDeFeu.GetComponent<Rigidbody2D>();
+        }*/
+        Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
 
-        //projectile.transform.Translate(chuLa);
-        body.AddForce(Vector3.right * 1000);
-        
-        //body.AddForce(this.transform.eulerAngles * vitesseDuTir);
+        //bouleDeFeu.transform.Translate(chuLa, Space.Self);
+        body.AddForce(this.transform.forward * vitesseDuTir);
     }
 
 
@@ -58,6 +58,7 @@ public class Dragon : Monstre
         startTime += Time.deltaTime;
         if (heroEstCibler)
         {
+            
             if (faireFeu)
                 cracherFeu();
             else if (startTime >= cadenceDeTir)

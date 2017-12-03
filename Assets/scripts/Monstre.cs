@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Monstre : MonoBehaviour
 {
-    public GameObject personnage;
+    protected GameObject personnage;
     public bool directionDroite = true;
     public bool heroEstCibler = false;
     public float posMonstre = 0;
@@ -12,13 +12,17 @@ public class Monstre : MonoBehaviour
     public float difference = 0;
     public int vie = 1;
     public AudioSource sonCri;
+    Vector3 scale;
     // Use this for initialization
     protected void Start()
     {
+        personnage = GameObject.Find("Personnage");
+        scale = this.transform.localScale;
+        scale *= -1;
        sonCri = this.GetComponent<AudioSource>();
        posMonstre = this.transform.position.x;
        posPerso = personnage.transform.position.x;
-       difference = posMonstre - posPerso;
+       //difference = posMonstre - posPerso;
       
     }
 
@@ -30,7 +34,7 @@ public class Monstre : MonoBehaviour
             sonCri.Play();
             posMonstre = this.transform.position.x;
             posPerso = personnage.transform.position.x;
-            difference = posMonstre - posPerso;
+            //difference = posMonstre - posPerso;
         }
     }
 
@@ -43,20 +47,30 @@ public class Monstre : MonoBehaviour
 
             posMonstre = this.transform.position.x;
             posPerso = personnage.transform.position.x;
-            difference = posMonstre - posPerso;
+            //difference = posMonstre - posPerso;
         }
     }
     // Update is called once per frame
     protected void Update()
     {
-        if (difference < 0)
+        if (heroEstCibler)
+        {
+            Quaternion rotation = Quaternion.LookRotation(personnage.transform.position - this.transform.position);
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, Time.deltaTime * 10000);
+           
+            if (rotation.x > 90)
+                this.transform.rotation = new Quaternion(0, 180, 0, 0);
+            else
+                this.transform.rotation = new Quaternion(0,0,0,0);
+           
+
+        }
+        if (posMonstre > posPerso)
             directionDroite = false;
 
         if(!directionDroite)
-        {
-            tourne();
-            directionDroite = true;
-        }
+            tourne();           
+        
          if (vie <= 0)
             Destroy(this.gameObject);
     }
@@ -74,12 +88,8 @@ public class Monstre : MonoBehaviour
     }
 
     void tourne()
-    {
-        Vector3 scale = this.transform.localScale;
-        if (!directionDroite && heroEstCibler)
-        {
-            scale.x *= -1;
-        }
+    {       
+            scale.x *= -1;        
     }
 
 }

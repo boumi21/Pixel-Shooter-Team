@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ControleProjectile : MonoBehaviour
 {
- 
+    public bool touche = false;
     // Use this for initialization
     void Start()
-    {
-        Destroy(this.gameObject, 4);
+    {       
+        //Destroy(this.gameObject, 4);
     }
 
     // Update is called once per frame
@@ -17,13 +17,17 @@ public class ControleProjectile : MonoBehaviour
         
 
     }
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "personnage")
         {
-            collider.GetComponent<Monstre>().perdreVie();
+            Debug.Log("j'ai hit le gars !");
+            touche = true;
+            ManegerDeGame.game.prendreDegat();
             Destroy(this.gameObject);
-        }      
+            
+        }
+        
     }
 
 }
