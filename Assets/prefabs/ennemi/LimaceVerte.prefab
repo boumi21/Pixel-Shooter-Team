@@ -145,6 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2dea053c2afeb43a7b0396dde9812a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personnage: {fileID: 1659770953591784, guid: 6a1dfe0a3cdfe8f49bda1dc6490f56ab, type: 2}
+  directionDroite: 1
+  posMonstre: 0
+  posPerso: 0
+  difference: 0
   vie: 2
 --- !u!212 &212118739407823934
 SpriteRenderer:

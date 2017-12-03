@@ -7,10 +7,10 @@ public class Dragon : Monstre
 
     public GameObject bouleDeFeu;
     private float vitesseDuTir = 900f;
-    private float cadenceDeTir = 1f;
+    private float cadenceDeTir = 3f;
     private float startTime;
    
-    private bool faireFeu = true;
+    private bool faireFeu = false;
     public int compteurDeTir = 0;
 	void Start()
     {
@@ -23,14 +23,7 @@ public class Dragon : Monstre
 	// Update is called once per frame
 
 
-    void OnTriggerEnter2D(Collider2D obj)
-    {
-        if(obj.gameObject.tag == "personnage")
-        {
-            heroEstCibler = true;
-        }
-     
-    }
+
     //GameObject projectile = (GameObject)
     private void cracherFeu()
     {
@@ -51,25 +44,14 @@ public class Dragon : Monstre
         Rigidbody2D body = bouleDeFeu.GetComponent<Rigidbody2D>();
 
         //projectile.transform.Translate(chuLa);
-        body.AddForceAtPosition(Vector3.right * 1000, transform.position);
+        body.AddForce(Vector3.right * 1000);
+        
         //body.AddForce(this.transform.eulerAngles * vitesseDuTir);
     }
 
-    void OnTriggerStay2D(Collider2D obj)
-    {
-        if(obj.gameObject.tag == "personnage")
-        {
-            heroEstCibler = true;
-        }
-    }
 
-    void OnTriggerExit2D(Collider2D obj)
-    {
-        if (obj.gameObject.tag == "personnage")
-        {
-            heroEstCibler = false;
-        }
-    }
+
+
 
     void Update()
     {
