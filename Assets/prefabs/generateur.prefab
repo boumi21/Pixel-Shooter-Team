@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1482170550348462}
+  m_IsPrefabParent: 1
+--- !u!1 &1482170550348462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4683615719104532}
+  - component: {fileID: 114756445490076608}
+  m_Layer: 0
+  m_Name: generateur
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4683615719104532
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482170550348462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5876198, y: -0.20937681, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114756445490076608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482170550348462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c63918f80b86bd489b1f6a7dbc44eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hauteur: 20
+  longueur: 30
+  quantiterLake: 3
+  quantiterCoins: 10
+  quantiterEnemys: 10
+  quantiterDragons: 2
+  quantiterBlockers: 50
+  quantiterDecorations: 150
+  carte: {fileID: 0}
+  persoPrinc: {fileID: 1659770953591784, guid: c140e9b8b0f979642bf1105ec27a47e0, type: 2}
+  coin: {fileID: 1135914005137342, guid: 239091811eafd614a9ee4461f899c4c1, type: 2}
+  dragron: {fileID: 1329855080766130, guid: f053155c2688df248be0447a609e87f4, type: 2}
+  grass: {fileID: 1198681778212238, guid: af490f277ee16e84dae2eeb301dbe48a, type: 2}
+  enemys:
+  - {fileID: 1913276958060680, guid: 43c774674cf7e904c8b580052b2d4c01, type: 2}
+  - {fileID: 1713871309789400, guid: 0f8755f11f10f324c85ba4103b1de46a, type: 2}
+  lake:
+  - {fileID: 1612693181633248, guid: a1469b9885820684aa8fd80a7b1fc44f, type: 2}
+  - {fileID: 1807480359257642, guid: 7c78a35377db6e94eb70ff4b4cd1a527, type: 2}
+  - {fileID: 1392953948051320, guid: c2833af9547a708439752c6a64f0d6d2, type: 2}
+  - {fileID: 1663750034017992, guid: 917988bfca44e8044bb7aa35ddf6b63a, type: 2}
+  blockers:
+  - {fileID: 1233430527974242, guid: e638330c6686c1e4ab42da5b58ad8612, type: 2}
+  - {fileID: 1375401822681704, guid: 9ede9c522d3e5404f90fe090c0bfa014, type: 2}
+  - {fileID: 1499463117317256, guid: ad2f5c0da7ae06b499a1a9f542c9f58f, type: 2}
+  - {fileID: 1779801215816822, guid: 75551c586624a9c4bb01d2eda937c134, type: 2}
+  - {fileID: 1346869449771216, guid: f26e22a843ddd9b4786b254b966d9723, type: 2}
+  - {fileID: 1778719948661748, guid: 71ad88e72bc44514eb5c6323e509af23, type: 2}
+  - {fileID: 1820089170233908, guid: 7f1673d81f28ed2438334dd856b242da, type: 2}
+  decorations:
+  - {fileID: 1872898909237914, guid: b9b2ee8063100b548bf1b0371eba8ce8, type: 2}
+  - {fileID: 1153261788426420, guid: ead2a2e7e91c940429931c36e8d34426, type: 2}
+  - {fileID: 1924119268808552, guid: 16d59c4862e6dd046a2edd26fe7b74fe, type: 2}
+  - {fileID: 1735494151366156, guid: eb4b2e838696d574ba797da1f76dbef7, type: 2}
+  mur:
+  - {fileID: 1030421709894870, guid: 9e3efcd24d2fa114dbfc36b7a3e60886, type: 2}
+  - {fileID: 1255303166178928, guid: 18853a4bb96b9ec4d84542423c6c30f9, type: 2}
