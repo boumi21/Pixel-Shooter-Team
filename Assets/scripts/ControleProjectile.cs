@@ -8,7 +8,7 @@ public class ControleProjectile : MonoBehaviour
     // Use this for initialization
     void Start()
     {       
-        //Destroy(this.gameObject, 4);
+        Destroy(this.gameObject, 4);
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class ControleProjectile : MonoBehaviour
         {
             Debug.Log("j'ai hit le gars !");
             touche = true;
-            ManegerDeGame.game.prendreDegat();
+            //ManegerDeGame.game.prendreDegat();
             Destroy(this.gameObject);
             
         }
