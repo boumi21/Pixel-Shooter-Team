@@ -6,7 +6,7 @@ public class Dragon : Monstre
 {
 
     public GameObject bouleDeFeu;
-    private float vitesseDuTir = 900f;
+    private float vitesseDuTir = 400f;
     private float cadenceDeTir = 3f;
     private bool faireFeu = false;
  
@@ -22,11 +22,12 @@ public class Dragon : Monstre
     public void cracherFeu()
     {
         faireFeu = false;
-        GameObject projectile = (GameObject)Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
+        GameObject projectile = (GameObject)Instantiate(bouleDeFeu, this.transform.localPosition, Quaternion.identity);
         
         Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
-        Debug.Log("j'ai craché!!");
-        body.AddForce(this.transform.forward * vitesseDuTir);
+        //Debug.Log("j'ai craché!!");
+        body.velocity = positonDuHero.normalized * cadenceDeTir;
+        //body.AddForce(this.transform.forward * vitesseDuTir);
     }
 
     void Update()

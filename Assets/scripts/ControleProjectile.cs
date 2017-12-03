@@ -23,7 +23,7 @@ public class ControleProjectile : MonoBehaviour
         {
             Debug.Log("j'ai hit le gars !");
             touche = true;
-            //ManegerDeGame.game.prendreDegat();
+            ManegerDeGame.game.prendreDegat();
             Destroy(this.gameObject);
             
         }

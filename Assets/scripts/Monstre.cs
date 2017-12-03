@@ -22,8 +22,8 @@ public class Monstre : MonoBehaviour
     {
         startTime = 0f;
 
-        personnage = GameObject.Find("Personnage");
-        positonDuHero = personnage.transform.position;
+        personnage = personnage = ManegerDeGame.game.gameObject.GetComponent<GenerateurDeNiveaux>().joueur[0];
+        positonDuHero = personnage.transform.localPosition;
         scale = this.transform.localScale;
         scale *= -1;
         sonCri = this.GetComponent<AudioSource>();
@@ -65,11 +65,12 @@ public class Monstre : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        //personnage = ManegerDeGame.game.gameObject.GetComponent<GenerateurDeNiveaux>().joueur[0];
-        personnage = GameObject.Find("Personnage");
-        positonDuHero = personnage.transform.position;
+        personnage = ManegerDeGame.game.gameObject.GetComponent<GenerateurDeNiveaux>().joueur[0];
+        
+        positonDuHero = personnage.transform.localPosition;
         
         startTime += Time.deltaTime;
+
         if (enCorpsACorps)
         {
             if (vaSiMords)
@@ -84,28 +85,28 @@ public class Monstre : MonoBehaviour
         if (heroEstCibler)
         {
             Debug.Log("il est ciblé!");
-            print("il est cibler !");
-            Quaternion rotation = Quaternion.LookRotation(personnage.transform.position - this.transform.position);
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, Time.deltaTime * 10000);
+
            
+            Quaternion rotation = Quaternion.LookRotation(personnage.transform.localPosition - this.transform.position);
+
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, Time.deltaTime * 10000);
+    
+            //this.transform.rotation = Quaternion.Euler(, 0, 0, 0);
+            
+            Debug.Log("voici la valeur de x " + rotation.x);
             if (rotation.x > 90)
             {
-                print("j'ai passé dans rotation > 90");
-                this.transform.rotation = new Quaternion(0, 180, 0, 0);
+                Debug.Log("j'ai passé dans rotation > 90");
+                transform.Rotate(0, 180, 0, 0);
             }
-                
+
             else
             {
-                print("j'ai passé dans else");
-                this.transform.rotation = new Quaternion(0, 0, 0, 0);           
-
+                Debug.Log("j'ai passé dans else");
+                transform.Rotate(0, 240, 0, 0);
             }
+        }  
 
-        }      
-
-        if(!directionDroite)
-            tourne();           
-        
          if (vie <= 0)
             Destroy(this.gameObject);
     }
@@ -116,9 +117,5 @@ public class Monstre : MonoBehaviour
         vie--;
     }
 
-    protected void tourne()
-    {       
-            scale.x *= -1;        
-    }
 
 }
