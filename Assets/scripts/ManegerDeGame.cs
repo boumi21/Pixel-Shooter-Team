@@ -31,17 +31,19 @@ public class ManegerDeGame : MonoBehaviour {
 	{
 		score++;
 		if (score % 10 == 0)
-			fail ();	
+			gagner ();	
 		sources [1].clip = coin;
 		sources [1].Play();
+		scoreT.text = score + " points";
 	}
 	public void prendreDegat()
 	{
 		vie--;
 		if(vie <= 0)
-			gagner();
+			fail();
 		sources [1].clip = hit;
 		sources [1].Play();
+		vieT.text = vie + " vie restantes";
 	}
 	private void fail()
 	{

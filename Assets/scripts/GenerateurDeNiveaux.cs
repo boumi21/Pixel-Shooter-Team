@@ -16,14 +16,16 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 	public int quantiterDragons = 2;
 	public int quantiterBlockers = 50;
 	public int quantiterDecorations = 150;
-
+	public int quantiterPointsPath = 5;
 
 	private List<Vector3> positions = new List<Vector3>();
 	[HideInInspector]public GameObject carte;
+	[HideInInspector]public List<GameObject> listePath = new List<GameObject>();
 
+	public GameObject pathPoint;
 	public GameObject persoPrinc;
 	public GameObject coin;
-	public GameObject dragron;
+	public GameObject dragon;
 	public GameObject grass;
 
 	public GameObject[] enemys;
@@ -46,11 +48,13 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 		placerSol ();
 		placerLake ();
 		placerMur ();
-		placerBlockers ();
-		placerDecorations ();
-		placerEnemys ();
-		placerCoins ();
-		placerPersoPrinc ();
+		spawner (quantiterBlockers, blockers);
+		spawner (quantiterDecorations, decorations);
+		spawner (quantiterEnemys, enemys);
+		spawner (quantiterDragons, dragon);
+		spawner (quantiterCoins, coin);
+		spawner (1, persoPrinc);
+		listePath = spawner (quantiterPointsPath, pathPoint);
 	}
 	private void placerSol()
 	{
@@ -123,49 +127,30 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 			instance.transform.parent = carte.transform;
 		}
 	}
-	private void placerDecorations()
+	private List<GameObject> spawner(int quantiter, GameObject[] objet)
 	{
-		for (int i = quantiterDecorations; i > 0; i--) 
+		List<GameObject> instances = new List<GameObject> ();
+		for (int i = quantiter; i > 0; i--) 
 		{
 			Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-			GameObject instance = Instantiate(decorations[Random.Range(0, decorations.Length)], emplacement, Quaternion.identity);
+			GameObject instance = Instantiate(objet[Random.Range(0, objet.Length)], emplacement, Quaternion.identity);
 			positions.Remove (emplacement);
 			instance.transform.parent = carte.transform;
+			instances.Add (instance);
 		}
+		return instances;
 	}
-	private void placerEnemys ()
+	private List<GameObject> spawner(int quantiter, GameObject objet)
 	{
-		for (int i = quantiterEnemys; i > 0; i--) 
+		List<GameObject> instances = new List<GameObject> ();
+		for (int i = quantiter; i > 0; i--) 
 		{
-			Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-			Instantiate(enemys[Random.Range(0, enemys.Length)], emplacement, Quaternion.identity);
-			positions.Remove (emplacement);
-		}
-		placerDragons ();
-	}
-	private void placerDragons()
-	{
-		for (int i = quantiterDragons; i > 0; i--) 
-		{
-			Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-			Instantiate(dragron, emplacement, Quaternion.identity);
-			positions.Remove (emplacement);
-		}
-	}
-	private void placerCoins()
-	{
-		for (int i = quantiterCoins; i > 0; i--) 
-		{
-			Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-			GameObject instance = Instantiate(coin, emplacement, Quaternion.identity);
+			Vector3 emplacement = positions [Random.Range (0, positions.Count)];
+			GameObject instance = Instantiate (objet, emplacement, Quaternion.identity);
 			positions.Remove (emplacement);
 			instance.transform.parent = carte.transform;
+			instances.Add (instance);
 		}
-	}
-	private void placerPersoPrinc()
-	{
-		Vector3 emplacement = positions[Random.Range (0, positions.Count)];
-		Instantiate(persoPrinc, emplacement, Quaternion.identity);
-		positions.Remove (emplacement);
+		return instances;
 	}
 }

@@ -139,11 +139,14 @@ MonoBehaviour:
   quantiterEnemys: 10
   quantiterDragons: 2
   quantiterBlockers: 50
-  quantiterDecorations: 150
+  quantiterDecorations: 75
+  quantiterPointsPath: 5
   carte: {fileID: 0}
+  listePath: []
+  pathPoint: {fileID: 1001570679770500, guid: be3968a87b00e124ba35645f2fdeda53, type: 2}
   persoPrinc: {fileID: 1659770953591784, guid: c140e9b8b0f979642bf1105ec27a47e0, type: 2}
   coin: {fileID: 1135914005137342, guid: 239091811eafd614a9ee4461f899c4c1, type: 2}
-  dragron: {fileID: 1329855080766130, guid: f053155c2688df248be0447a609e87f4, type: 2}
+  dragon: {fileID: 1329855080766130, guid: f053155c2688df248be0447a609e87f4, type: 2}
   grass: {fileID: 1198681778212238, guid: af490f277ee16e84dae2eeb301dbe48a, type: 2}
   enemys:
   - {fileID: 1913276958060680, guid: 43c774674cf7e904c8b580052b2d4c01, type: 2}
