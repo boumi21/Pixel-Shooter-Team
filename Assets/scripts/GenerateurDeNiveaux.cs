@@ -92,7 +92,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 			{
 				if (x == 2) 
 				{
-					GameObject instance = Instantiate (mur [1], new Vector3 (31, y, 0f), Quaternion.identity);
+					GameObject instance = Instantiate (mur [1], new Vector3 (longueur, y, 0f), Quaternion.identity);
 					instance.transform.parent = carte.transform;
 				} else 
 				{
@@ -105,7 +105,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 			{
 				if (y == 2) 
 				{
-					GameObject instance = Instantiate (mur [0], new Vector3 (x, 21, 0f), Quaternion.identity);
+					GameObject instance = Instantiate (mur [0], new Vector3 (x, hauteur + 1, 0f), Quaternion.identity);
 					instance.transform.parent = carte.transform;
 				} else 
 				{
@@ -113,7 +113,7 @@ public class GenerateurDeNiveaux : MonoBehaviour {
 					instance.transform.parent = carte.transform;
 				}
 			}
-		GameObject un = Instantiate (mur [0], new Vector3 (0, 21, 0f), Quaternion.identity);
+		GameObject un = Instantiate (mur [0], new Vector3 (0, hauteur + 1, 0f), Quaternion.identity);
 		GameObject deux = Instantiate (mur [0], new Vector3 (0, 0, 0f), Quaternion.identity);
 		un.transform.parent = carte.transform;
 		deux.transform.parent = carte.transform;
