@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4549560408568614}
+  - component: {fileID: 114153252918802330}
   - component: {fileID: 95816697566199588}
   - component: {fileID: 50585368226031382}
   - component: {fileID: 58286846378783328}
@@ -238,6 +239,17 @@ MonoBehaviour:
   recharger: 1
   detonation: 1
   quelquunDedans: 0
+--- !u!114 &114153252918802330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659770953591784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3654b81ad2fa25144974f2984695ab6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114781866490376700
 MonoBehaviour:
   m_ObjectHideFlags: 1
