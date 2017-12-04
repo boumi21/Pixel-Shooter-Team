@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ManegerDeGame : MonoBehaviour {
 
 	private int vie =  5;
-	private int score = 0;
+	[HideInInspector]public int score = 0;
 	private int noDeLevel = 0;
 
 	public Text vieT;

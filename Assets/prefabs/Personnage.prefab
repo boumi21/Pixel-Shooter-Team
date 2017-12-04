@@ -105,11 +105,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659770953591784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9208b144a23eb564087076174cd27693, type: 3}
+  m_Script: {fileID: 11500000, guid: b7da9cd659afc2143a5d9736691cf372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 10
-  maxSpeed: 10
+  maxSpeed: 5
   joueur: {fileID: 0}
 --- !u!195 &195767350293680918
 NavMeshAgent:
