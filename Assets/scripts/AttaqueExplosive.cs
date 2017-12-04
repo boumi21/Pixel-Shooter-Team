@@ -9,11 +9,13 @@ public class AttaqueExplosive : MonoBehaviour
     private bool changementAFaire = false;
     private float delait = 0;
     private int interval = 3;
+    GameObject leHero;
     Renderer couleurHero;
 	// Use this for initialization
 	void Start ()
     {
-        couleurHero = this.GetComponent<Renderer>();
+        leHero = GameObject.Find("Personnage");
+        couleurHero = leHero.GetComponent<Renderer>();
 	}
 	
     void OnTriggerStay2D(Collider2D ennemi)
