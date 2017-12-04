@@ -20,12 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4903661111857490}
   - component: {fileID: 212118739407823934}
+  - component: {fileID: 114150785456741236}
   - component: {fileID: 95086884885830872}
   - component: {fileID: 61233441916122452}
-  - component: {fileID: 114512191183938724}
-  - component: {fileID: 114813824328297632}
   - component: {fileID: 50747352266550624}
-  - component: {fileID: 58273718344762740}
   - component: {fileID: 82567516658822224}
   - component: {fileID: 82232993232252884}
   m_Layer: 8
@@ -68,21 +66,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58273718344762740
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913276958060680}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.6
 --- !u!61 &61233441916122452
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -117,7 +100,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d25f1336c7d3b554a87258cf673a1bb2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cd74b01774cf4ba4ea31eda5842eef98, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -197,7 +180,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e763e1ed3c379724eaccf3e2d874c4f8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5caf22c91445f5c4cb78878b16ff4fba, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.086
   m_Pitch: 1
@@ -285,7 +268,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114512191183938724
+--- !u!114 &114150785456741236
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -293,24 +276,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1913276958060680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114813824328297632
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913276958060680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2dea053c2afeb43a7b0396dde9812a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f33f5e904e982a4aa32fd682d6761e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   directionDroite: 1
   heroEstCibler: 0
   enCorpsACorps: 0
-  vie: 2
+  vie: 1
   sonCri: {fileID: 82567516658822224}
   saMorsure: {fileID: 82232993232252884}
 --- !u!212 &212118739407823934

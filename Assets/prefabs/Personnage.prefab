@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4380611644951490}
   - component: {fileID: 58418392252680710}
   - component: {fileID: 114073892240799172}
+  - component: {fileID: 82547383020504180}
   m_Layer: 0
   m_Name: kaboum
   m_TagString: Untagged
@@ -37,11 +38,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4549560408568614}
   - component: {fileID: 95816697566199588}
-  - component: {fileID: 212836459366401712}
   - component: {fileID: 50585368226031382}
   - component: {fileID: 58286846378783328}
   - component: {fileID: 195767350293680918}
   - component: {fileID: 114781866490376700}
+  - component: {fileID: 212765552269871884}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: personnage
@@ -126,6 +127,86 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!82 &82547383020504180
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110790686703238}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b9f70f30fd626aa418b8ca4bd446238b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95816697566199588
 Animator:
   serializedVersion: 3
@@ -135,7 +216,7 @@ Animator:
   m_GameObject: {fileID: 1659770953591784}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6e07080b2e161045a341697164f9763, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -151,11 +232,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110790686703238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c199312c1831d42a67f0e7589f2ed5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b443f24bee328e44a17a8b885ec8788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   recharger: 1
   detonation: 1
+  quelquunDedans: 0
 --- !u!114 &114781866490376700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,12 +246,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659770953591784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1ac8313f8d59f4b9d16d19c6903d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9208b144a23eb564087076174cd27693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 10
   maxSpeed: 5
-  joueur: {fileID: 1659770953591784}
+  joueur: {fileID: 0}
 --- !u!195 &195767350293680918
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -191,7 +273,7 @@ NavMeshAgent:
   m_BaseOffset: 0.105
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!212 &212836459366401712
+--- !u!212 &212765552269871884
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -204,7 +286,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

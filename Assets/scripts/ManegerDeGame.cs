@@ -30,7 +30,7 @@ public class ManegerDeGame : MonoBehaviour {
 	public void gagnerPoints()
 	{
 		score++;
-		if (score % 10 == 0)
+		if (score % 1 == 0)
 			gagner ();	
 		sources [1].clip = coin;
 		sources [1].Play();

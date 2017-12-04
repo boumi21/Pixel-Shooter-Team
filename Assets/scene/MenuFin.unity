@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 34e53b14a5c2a47418488782b71b2c2a, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -659,7 +659,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &949175772
 Transform:
@@ -772,7 +772,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 982666598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f91e042b11dbc4eaa579892d493c94, type: 3}
+  m_Script: {fileID: 11500000, guid: 063358815e4a47d4cbd8cdde61d63158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   txtPoints: {fileID: 220899193}
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9264706, g: 0.06812285, b: 0.79623836, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676019772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 562f63b28d9565e4bb601a1a9422e964, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ed26c4c9e94aab4dbca612b371f71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1676019774
@@ -1154,7 +1154,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f438649e847d075478e2b11af2f4461a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb6f03cd56606e84089f6997c014ad66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

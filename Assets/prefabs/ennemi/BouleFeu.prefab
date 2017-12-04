@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4165036497234294}
   - component: {fileID: 212009236668098840}
   - component: {fileID: 95662185551291404}
-  - component: {fileID: 114075132408295370}
   - component: {fileID: 61503810866977436}
   - component: {fileID: 50963541079008770}
+  - component: {fileID: 114163759800829486}
   - component: {fileID: 82401485835209008}
   m_Layer: 0
   m_Name: BouleFeu
@@ -80,7 +80,7 @@ BoxCollider2D:
   m_Offset: {x: 0.055, y: -0.04}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 1}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.11, y: 0.08}
     newSize: {x: 0.11, y: 0.08}
     adaptiveTilingThreshold: 0.5
@@ -99,7 +99,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3b165e4b3fd2f184d890fdf2a31e9f0f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 03b8bcc001c14084c83cff207cf37f08, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.419
   m_Pitch: 1
@@ -187,7 +187,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114075132408295370
+--- !u!114 &114163759800829486
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309325056219838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b5bf9d59c76dce4f84b67c643b08e19, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ca4476ca5ec9bd49ac429bd8ec5dba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   touche: 0
@@ -231,7 +231,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cae6ccbe29d080948a47d58b5c5b7bba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e71aa63192fb4346a5efbe3c4280b95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

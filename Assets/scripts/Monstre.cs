@@ -84,7 +84,6 @@ public class Monstre : MonoBehaviour
 
         if (heroEstCibler)
         {
-            Debug.Log("il est ciblé!");
 
            
             Quaternion rotation = Quaternion.LookRotation(personnage.transform.localPosition - this.transform.position);
@@ -92,17 +91,13 @@ public class Monstre : MonoBehaviour
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, Time.deltaTime * 10000);
     
             //this.transform.rotation = Quaternion.Euler(, 0, 0, 0);
-            
-            Debug.Log("voici la valeur de x " + rotation.x);
             if (rotation.x > 90)
             {
-                Debug.Log("j'ai passé dans rotation > 90");
                 transform.Rotate(0, 180, 0, 0);
             }
 
             else
             {
-                Debug.Log("j'ai passé dans else");
                 transform.Rotate(0, 240, 0, 0);
             }
         }  

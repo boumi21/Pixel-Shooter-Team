@@ -11,7 +11,6 @@ public class MenuControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (ManegerDeGame.game.score);
 		txtPoints.text = "Score : " + ManegerDeGame.game.score;
 	}
 	

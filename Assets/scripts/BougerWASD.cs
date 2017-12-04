@@ -46,7 +46,6 @@ public class BougerWASD : MonoBehaviour {
 			vitesseCourante = 0;
 			velocity = new Vector3 (0, 0, 0);
 		}
-		print (body.velocity.x);
 		body.velocity = velocity;
 		animateur.SetFloat ("HS", body.velocity.x);
 		animateur.SetFloat ("VS", body.velocity.y);
