@@ -9,9 +9,13 @@ public class BougerWASD : MonoBehaviour {
 	[HideInInspector]public GameObject joueur;
 	private Rigidbody2D body;
 	private float vitesseCourante = 0;
+	private Animator animateur;
+	private bool flip = false;
 
 	void Start()
 	{
+		Vector3 scale = this.transform.localScale;
+		animateur = this.gameObject.GetComponent<Animator> ();
 		joueur = this.gameObject;
 		body = joueur.GetComponent<Rigidbody2D> ();
 	}
@@ -44,6 +48,35 @@ public class BougerWASD : MonoBehaviour {
 		}
 		print (body.velocity.x);
 		body.velocity = velocity;
-
+		animateur.SetFloat ("HS", body.velocity.x);
+		animateur.SetFloat ("VS", body.velocity.y);
 	}
+
+	void Update()
+	{
+		/*print ("esfd");
+		animateur.SetFloat ("HS", body.velocity.x);
+		animateur.SetFloat ("VS", body.velocity.y);
+		if (body.velocity.x < 0 && !flip) {
+			scale = new Vector3 (scale.x * -1, scale.y, scale.z); 
+			this.transform.localScale = scale;
+			flip = true;
+		} else if (body.velocity.x > -1 && flip) {
+			scale = new Vector3 (scale.x * -1, scale.y, scale.z); 
+			this.transform.localScale = scale;
+			flip = false;
+		}*/
+		if (body.velocity.x < 0 && !flip) {
+			Vector3 scale = transform.localScale;
+			scale.x *= -1;
+			transform.localScale = scale;
+			flip = true;
+		} else if (body.velocity.x > -1 && flip) {
+			Vector3 scale = transform.localScale;
+			scale.x *= -1;
+			transform.localScale = scale;
+			flip = false;
+		}
+	}
+
 }
