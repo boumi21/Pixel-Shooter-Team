@@ -20,13 +20,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4969485573109000}
   - component: {fileID: 212537429755382076}
-  - component: {fileID: 114718535272716698}
-  - component: {fileID: 114810029307821622}
   - component: {fileID: 95608510542916126}
   - component: {fileID: 50364750486068836}
   - component: {fileID: 61443433523277382}
   - component: {fileID: 82437991665850576}
   - component: {fileID: 82013596023040392}
+  - component: {fileID: 114072996078908962}
+  - component: {fileID: 58613692708385282}
   m_Layer: 8
   m_Name: ChauveSouris
   m_TagString: Ennemi
@@ -34,6 +34,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1822002989610320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4620453756072734}
+  - component: {fileID: 114739625491473870}
+  - component: {fileID: 58992740317564106}
+  m_Layer: 8
+  m_Name: AiChauveSouris
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4620453756072734
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1822002989610320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4969485573109000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4969485573109000
 Transform:
   m_ObjectHideFlags: 1
@@ -43,7 +73,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.18, y: 0.48, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 4620453756072734}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67,6 +98,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58613692708385282
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713871309789400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08
+--- !u!58 &58992740317564106
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1822002989610320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!61 &61443433523277382
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -101,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a662d0087219efc44bfd593c4d1a9d98, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5b6b394c5699e6a4a8b3190b4b9615fb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -181,7 +242,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2cfdfd311cf3d6e499db7b42ef60d31f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c622432d19373504baf12af2a16218e6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -269,7 +330,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114718535272716698
+--- !u!114 &114072996078908962
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -277,19 +338,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713871309789400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 001445a0560f7eb4d96686c25cbdd21e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vitesseDeDeplacement: 100
---- !u!114 &114810029307821622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1713871309789400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cad91a470db1441b0a2cc1a8bd3915, type: 3}
+  m_Script: {fileID: 11500000, guid: ba25b5b561b95a64cbf3cd719c482116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   directionDroite: 1
@@ -298,6 +347,24 @@ MonoBehaviour:
   vie: 1
   sonCri: {fileID: 82437991665850576}
   saMorsure: {fileID: 82013596023040392}
+--- !u!114 &114739625491473870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1822002989610320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesseDeDeplacement: 100
+  bouleDeFeu: {fileID: 0}
+  heroCibler: 0
+  vitesseDeplacement: 5
+  cadenceDeTir: 3
+  faireFeu: 1
+  startTime: 0
 --- !u!212 &212537429755382076
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Monstre : MonoBehaviour
 {
     protected GameObject personnage;
-    protected Vector3 positonDuHero;
+    protected Vector2 positonDuHero;
     public bool directionDroite = true;
     public bool heroEstCibler = false;
     public bool enCorpsACorps = false;
@@ -22,7 +22,7 @@ public class Monstre : MonoBehaviour
     {
         startTime = 0f;
 
-        personnage = personnage = ManegerDeGame.game.gameObject.GetComponent<GenerateurDeNiveaux>().joueur[0];
+        personnage = ManegerDeGame.game.gameObject.GetComponent<GenerateurDeNiveaux>().joueur[0];
         positonDuHero = personnage.transform.localPosition;
         scale = this.transform.localScale;
         scale *= -1;

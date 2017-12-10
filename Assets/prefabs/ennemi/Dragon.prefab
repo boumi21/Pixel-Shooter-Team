@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1329855080766130}
   m_IsPrefabParent: 1
+--- !u!1 &1200378910929852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4418405854449198}
+  - component: {fileID: 58910865349467640}
+  - component: {fileID: 114051487557316546}
+  m_Layer: 0
+  m_Name: AiDragon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1329855080766130
 GameObject:
   m_ObjectHideFlags: 0
@@ -21,12 +38,12 @@ GameObject:
   - component: {fileID: 4734724497609516}
   - component: {fileID: 95715034433486864}
   - component: {fileID: 212012815907072678}
-  - component: {fileID: 114032934186305438}
   - component: {fileID: 61019551231457774}
   - component: {fileID: 58773830828517436}
   - component: {fileID: 50977304918258388}
   - component: {fileID: 82464949249382512}
   - component: {fileID: 82605444860001286}
+  - component: {fileID: 114387871876562788}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -34,6 +51,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4418405854449198
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200378910929852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4734724497609516}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4734724497609516
 Transform:
   m_ObjectHideFlags: 1
@@ -43,7 +73,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.9946795, y: 0.6145041, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 4418405854449198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0, y: 0, z: 0}
@@ -81,7 +112,22 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.1
+--- !u!58 &58910865349467640
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200378910929852}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!61 &61019551231457774
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -116,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a662d0087219efc44bfd593c4d1a9d98, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aacd0a1dc8fcd9e4784a2906d477e41d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.333
   m_Pitch: 1
@@ -174,7 +220,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -196,7 +242,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4b0ece3b319bdc1478810e422a5aa738, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -284,7 +330,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114032934186305438
+--- !u!114 &114051487557316546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200378910929852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesseDeDeplacement: 100
+  bouleDeFeu: {fileID: 0}
+  heroCibler: 0
+  vitesseDeplacement: 5
+  cadenceDeTir: 3
+  faireFeu: 1
+  startTime: 0
+--- !u!114 &114387871876562788
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -292,16 +356,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1329855080766130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5d7b5f0db5ed24ea0eb0d873d0a98f, type: 3}
+  m_Script: {fileID: 11500000, guid: de99292e825f00d43bf67eda2c71d397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   directionDroite: 1
   heroEstCibler: 0
   enCorpsACorps: 0
-  vie: 1
-  sonCri: {fileID: 82605444860001286}
-  saMorsure: {fileID: 82464949249382512}
-  bouleDeFeu: {fileID: 1309325056219838, guid: f32ff42648b41c64db81a78d46855879, type: 2}
+  vie: 3
+  sonCri: {fileID: 82464949249382512}
+  saMorsure: {fileID: 82605444860001286}
 --- !u!212 &212012815907072678
 SpriteRenderer:
   m_ObjectHideFlags: 1

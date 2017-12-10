@@ -14,8 +14,6 @@ public class ControleProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -24,8 +22,7 @@ public class ControleProjectile : MonoBehaviour
             Debug.Log("j'ai hit le gars !");
             touche = true;
             ManegerDeGame.game.prendreDegat();
-            Destroy(this.gameObject);
-            
+            Destroy(this.gameObject);     
         }
         
     }
