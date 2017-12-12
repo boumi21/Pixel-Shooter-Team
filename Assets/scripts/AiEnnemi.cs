@@ -5,7 +5,9 @@ using UnityEngine;
 public class AiEnnemi : MonoBehaviour
 {
     public float vitesseDeDeplacement = 100f;
-    
+    public GameObject pointDepart;
+    public GameObject pointArrivee;
+    public GameObject personnage;
     Rigidbody2D leCorps;
     Vector2 ennemiDepart;
     Vector2 ennemiDirection;
@@ -16,10 +18,13 @@ public class AiEnnemi : MonoBehaviour
     public float cadenceDeTir = 3f;
     public bool faireFeu = true;
     public float startTime;
+    private Random random;
 
     // Use this for initialization
     void Start()
     {
+        Instantiate(pointDepart, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+        
         startTime = 0f;
         ennemiDepart = new Vector2(this.transform.position.x, this.transform.position.y);
         ennemiDirection = new Vector2(ennemiDepart.x, ennemiDepart.y+6);
@@ -45,6 +50,10 @@ public class AiEnnemi : MonoBehaviour
         }
     }
 
+    public bool HeroCibler()
+    {
+        return heroCibler;
+    }
     void OnTriggerExit2D(Collider2D obj)
     {
         if (obj.gameObject.tag == "personnage")
@@ -56,6 +65,8 @@ public class AiEnnemi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        startTime = Time.deltaTime;
+
         if(!heroCibler)
         {
             positionASuivre = ennemiDirection;
@@ -74,11 +85,16 @@ public class AiEnnemi : MonoBehaviour
             }
             
            // positionASuivre = 
-            enAvantMarche();
+            //enAvantMarche();
         }
 
     }
+ 
+    /*public void positionPointArrivee()
+    {
 
+    }
+    */
     public void enAvantMarche()
     {
         if (this.transform.position.y <= ennemiDepart.y)
@@ -90,6 +106,6 @@ public class AiEnnemi : MonoBehaviour
 
         }
     }
-
+   
   
 }

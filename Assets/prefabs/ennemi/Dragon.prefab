@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4418405854449198}
   - component: {fileID: 58910865349467640}
-  - component: {fileID: 114757262683380614}
-  - component: {fileID: 114082689114965508}
+  - component: {fileID: 114092629466330536}
+  - component: {fileID: 114922984348664484}
   m_Layer: 0
   m_Name: AiDragon
   m_TagString: Untagged
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 50977304918258388}
   - component: {fileID: 82464949249382512}
   - component: {fileID: 82605444860001286}
-  - component: {fileID: 114387871876562788}
+  - component: {fileID: 114067795047898126}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329855080766130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9946795, y: 0.6145041, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 0}
   m_Children:
   - {fileID: 4418405854449198}
@@ -244,7 +244,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -331,18 +331,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114082689114965508
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200378910929852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7638f2a8dab744e9f078fa5fe6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114387871876562788
+--- !u!114 &114067795047898126
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -356,10 +345,27 @@ MonoBehaviour:
   directionDroite: 1
   heroEstCibler: 0
   enCorpsACorps: 0
-  vie: 3
+  vie: 1
   sonCri: {fileID: 82464949249382512}
   saMorsure: {fileID: 82605444860001286}
---- !u!114 &114757262683380614
+--- !u!114 &114092629466330536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200378910929852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7638f2a8dab744e9f078fa5fe6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiEnnemi: {fileID: 0}
+  boucheDragon: {fileID: 1200378910929852}
+  bouleDeFeu: {fileID: 1309325056219838, guid: 3b26b140213a0574780e000561308048, type: 2}
+  cadenceDeTir: 3
+  faireFeu: 0
+  startTime: 0
+--- !u!114 &114922984348664484
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -371,7 +377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesseDeDeplacement: 100
-  bouleDeFeu: {fileID: 1309325056219838, guid: 3b26b140213a0574780e000561308048, type: 2}
+  pointDepart: {fileID: 1584219318955348, guid: f2c485c5f0af919438d6d5915ed17d3f,
+    type: 2}
+  pointArrivee: {fileID: 1437462072418074, guid: 3f50642c523cbc4478da2c3595177be4,
+    type: 2}
+  personnage: {fileID: 1659770953591784, guid: 6a1dfe0a3cdfe8f49bda1dc6490f56ab, type: 2}
   heroCibler: 0
   vitesseDeplacement: 5
   cadenceDeTir: 3

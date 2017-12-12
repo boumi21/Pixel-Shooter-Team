@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50747352266550624}
   - component: {fileID: 82567516658822224}
   - component: {fileID: 82232993232252884}
-  - component: {fileID: 114653025644114004}
+  - component: {fileID: 114214509848816474}
   m_Layer: 8
   m_Name: LimaceVerte
   m_TagString: Ennemi
@@ -41,8 +41,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4913575640158676}
-  - component: {fileID: 114354535070480366}
   - component: {fileID: 58316633494093690}
+  - component: {fileID: 114232520057532596}
   m_Layer: 8
   m_Name: AiLimaceVerte
   m_TagString: Untagged
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913276958060680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.51, y: 2.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 6, z: 0}
   m_Children:
   - {fileID: 4913575640158676}
@@ -147,7 +147,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d25f1336c7d3b554a87258cf673a1bb2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -228,7 +228,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e763e1ed3c379724eaccf3e2d874c4f8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.086
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -314,25 +314,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114354535070480366
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1921222491195148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vitesseDeDeplacement: 100
-  bouleDeFeu: {fileID: 0}
-  heroCibler: 0
-  vitesseDeplacement: 5
-  cadenceDeTir: 3
-  faireFeu: 1
-  startTime: 0
---- !u!114 &114653025644114004
+--- !u!114 &114214509848816474
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -346,9 +328,31 @@ MonoBehaviour:
   directionDroite: 1
   heroEstCibler: 0
   enCorpsACorps: 0
-  vie: 2
+  vie: 1
   sonCri: {fileID: 82567516658822224}
   saMorsure: {fileID: 82232993232252884}
+--- !u!114 &114232520057532596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921222491195148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesseDeDeplacement: 100
+  pointDepart: {fileID: 1584219318955348, guid: f2c485c5f0af919438d6d5915ed17d3f,
+    type: 2}
+  pointArrivee: {fileID: 1437462072418074, guid: 3f50642c523cbc4478da2c3595177be4,
+    type: 2}
+  personnage: {fileID: 1659770953591784, guid: 6a1dfe0a3cdfe8f49bda1dc6490f56ab, type: 2}
+  heroCibler: 0
+  vitesseDeplacement: 5
+  cadenceDeTir: 3
+  faireFeu: 1
+  startTime: 0
 --- !u!212 &212118739407823934
 SpriteRenderer:
   m_ObjectHideFlags: 1

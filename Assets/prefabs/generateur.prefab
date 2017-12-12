@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4683615719104532}
   - component: {fileID: 82393702835762690}
-  - component: {fileID: 114371080983521376}
   - component: {fileID: 82872746067787592}
   m_Layer: 0
   m_Name: generateur
@@ -202,43 +201,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114371080983521376
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1482170550348462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c63918f80b86bd489b1f6a7dbc44eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hauteur: 20
-  longueur: 30
-  quantiterLake: 3
-  quantiterCoins: 10
-  quantiterEnemys: 10
-  quantiterDragons: 2
-  quantiterBlockers: 50
-  quantiterDecorations: 150
-  quantiterPointsPath: 5
-  carte: {fileID: 0}
-  listePath: []
-  joueur: []
-  pathPoint: {fileID: 1001570679770500, guid: 205072e4c27277f4fa2cdceb468a7d9e, type: 2}
-  persoPrinc: {fileID: 1659770953591784, guid: 6a1dfe0a3cdfe8f49bda1dc6490f56ab, type: 2}
-  coin: {fileID: 1135914005137342, guid: 21bddcdeee3b5c142943fa78b87fe674, type: 2}
-  dragon: {fileID: 1329855080766130, guid: 96025c65e3b0fbc46bb7f4be7e5f520c, type: 2}
-  grass: {fileID: 1198681778212238, guid: af490f277ee16e84dae2eeb301dbe48a, type: 2}
-  enemys:
-  - {fileID: 1713871309789400, guid: 22f2b98d5ef7a7e42a7f2cd60bff2372, type: 2}
-  - {fileID: 1913276958060680, guid: 64faa66f54d142d49b212d57c66ce750, type: 2}
-  lake:
-  - {fileID: 0}
-  blockers: []
-  decorations:
-  - {fileID: 1153261788426420, guid: ead2a2e7e91c940429931c36e8d34426, type: 2}
-  - {fileID: 1924119268808552, guid: 16d59c4862e6dd046a2edd26fe7b74fe, type: 2}
-  mur:
-  - {fileID: 1030421709894870, guid: d0411b7b693d8714a9e2948388813d35, type: 2}
-  - {fileID: 1255303166178928, guid: 207233dbfd52ea343a9d50f9d5044a7e, type: 2}

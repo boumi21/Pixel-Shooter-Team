@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4380611644951490}
   - component: {fileID: 58418392252680710}
-  - component: {fileID: 114073892240799172}
+  - component: {fileID: 114974951917130388}
   - component: {fileID: 82547383020504180}
   m_Layer: 0
   m_Name: kaboum
@@ -217,7 +217,7 @@ Animator:
   m_GameObject: {fileID: 1659770953591784}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c6e07080b2e161045a341697164f9763, type: 2}
+  m_Controller: {fileID: 9100000, guid: 46a8674e2c71ebe4b892e41d15f6ab13, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -225,20 +225,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114073892240799172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1110790686703238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b443f24bee328e44a17a8b885ec8788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recharger: 1
-  detonation: 1
-  quelquunDedans: 0
 --- !u!114 &114113788183864854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,6 +245,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659770953591784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c199312c1831d42a67f0e7589f2ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recharger: 1
+  detonation: 0
+  quelquunDedans: 0
+--- !u!114 &114974951917130388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110790686703238}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20c199312c1831d42a67f0e7589f2ed5, type: 3}

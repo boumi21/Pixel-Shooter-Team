@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class CracherBouleDeFeu : MonoBehaviour
 {
+    public AiEnnemi aiEnnemi;
     public GameObject boucheDragon;
     public GameObject bouleDeFeu;
+    public float cadenceDeTir = 3f;
     public bool faireFeu = true;
     public float startTime;
-    public bool heroCibler = false;
+    //public bool heroCibler = false;
 	// Use this for initialization
 	void Start ()
     {
-        
         startTime = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        heroCibler = this.gameObject.GetComponent<AiEnnemi>.heroCibler;
-        heroCibler =
-        if(!heroCibler)
+       // heroCibler = GetComponent<AiEnnemi>().heroCibler; 
+        /*
+        if(!GetComponent<AiEnnemi>().heroCibler)
         {
             positionASuivre = ennemiDirection;
             enAvantMarche();
         }
-        else if (heroCibler)
+        else 
+            */
+        if (GetComponent<AiEnnemi>().heroCibler)
         {
             if (faireFeu)
             {
@@ -40,8 +43,9 @@ public class CracherBouleDeFeu : MonoBehaviour
             }
 
             // positionASuivre = 
-            enAvantMarche();
+            //enAvantMarche();
         }
+       
 		
 	}
 
@@ -52,7 +56,7 @@ public class CracherBouleDeFeu : MonoBehaviour
 
         Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
         Debug.Log("j'ai craché!!");
-        body.velocity = this.GetComponent<AiEnnemi>.positionASuivre;
+       // body.velocity = this.GetComponent<AiEnnemi>.positionASuivre;
         //body.AddForce(transform.forward * vitesseDuTir);
         //body.AddForceAtPosition(transform.tra * cadenceDeTir);
     }
