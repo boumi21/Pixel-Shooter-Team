@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 95662185551291404}
   - component: {fileID: 61503810866977436}
   - component: {fileID: 50963541079008770}
-  - component: {fileID: 114163759800829486}
   - component: {fileID: 82401485835209008}
+  - component: {fileID: 114642776118948012}
   m_Layer: 0
   m_Name: BouleFeu
   m_TagString: BouleFeu
@@ -187,7 +187,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114163759800829486
+--- !u!114 &114642776118948012
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309325056219838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ca4476ca5ec9bd49ac429bd8ec5dba1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5bf9d59c76dce4f84b67c643b08e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   touche: 0
@@ -239,5 +239,5 @@ SpriteRenderer:
   m_Size: {x: 0.11, y: 0.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0

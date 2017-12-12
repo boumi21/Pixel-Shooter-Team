@@ -37,13 +37,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4549560408568614}
-  - component: {fileID: 114153252918802330}
   - component: {fileID: 95816697566199588}
   - component: {fileID: 50585368226031382}
   - component: {fileID: 58286846378783328}
   - component: {fileID: 195767350293680918}
-  - component: {fileID: 114781866490376700}
+  - component: {fileID: 114656163374181686}
   - component: {fileID: 212765552269871884}
+  - component: {fileID: 114113788183864854}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: personnage
@@ -239,7 +239,7 @@ MonoBehaviour:
   recharger: 1
   detonation: 1
   quelquunDedans: 0
---- !u!114 &114153252918802330
+--- !u!114 &114113788183864854
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -247,23 +247,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659770953591784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3654b81ad2fa25144974f2984695ab6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114781866490376700
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659770953591784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9208b144a23eb564087076174cd27693, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e1ac8313f8d59f4b9d16d19c6903d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 10
   maxSpeed: 5
   joueur: {fileID: 0}
+--- !u!114 &114656163374181686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659770953591784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c199312c1831d42a67f0e7589f2ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recharger: 1
+  detonation: 0
+  quelquunDedans: 0
 --- !u!195 &195767350293680918
 NavMeshAgent:
   m_ObjectHideFlags: 1

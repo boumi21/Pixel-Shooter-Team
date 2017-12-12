@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4418405854449198}
   - component: {fileID: 58910865349467640}
-  - component: {fileID: 114051487557316546}
+  - component: {fileID: 114757262683380614}
+  - component: {fileID: 114082689114965508}
   m_Layer: 0
   m_Name: AiDragon
   m_TagString: Untagged
@@ -330,7 +331,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114051487557316546
+--- !u!114 &114082689114965508
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -338,16 +339,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1200378910929852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
+  m_Script: {fileID: 11500000, guid: fb7638f2a8dab744e9f078fa5fe6dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesseDeDeplacement: 100
-  bouleDeFeu: {fileID: 0}
-  heroCibler: 0
-  vitesseDeplacement: 5
-  cadenceDeTir: 3
-  faireFeu: 1
-  startTime: 0
 --- !u!114 &114387871876562788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -365,6 +359,24 @@ MonoBehaviour:
   vie: 3
   sonCri: {fileID: 82464949249382512}
   saMorsure: {fileID: 82605444860001286}
+--- !u!114 &114757262683380614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200378910929852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesseDeDeplacement: 100
+  bouleDeFeu: {fileID: 1309325056219838, guid: 3b26b140213a0574780e000561308048, type: 2}
+  heroCibler: 0
+  vitesseDeplacement: 5
+  cadenceDeTir: 3
+  faireFeu: 1
+  startTime: 0
 --- !u!212 &212012815907072678
 SpriteRenderer:
   m_ObjectHideFlags: 1

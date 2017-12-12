@@ -5,7 +5,7 @@ using UnityEngine;
 public class AiEnnemi : MonoBehaviour
 {
     public float vitesseDeDeplacement = 100f;
-    public GameObject bouleDeFeu;
+    
     Rigidbody2D leCorps;
     Vector2 ennemiDepart;
     Vector2 ennemiDirection;
@@ -22,7 +22,7 @@ public class AiEnnemi : MonoBehaviour
     {
         startTime = 0f;
         ennemiDepart = new Vector2(this.transform.position.x, this.transform.position.y);
-        ennemiDirection = new Vector2(ennemiDepart.x, ennemiDirection.y+6);
+        ennemiDirection = new Vector2(ennemiDepart.x, ennemiDepart.y+6);
         leCorps = this.GetComponent<Rigidbody2D>();
     }
 
@@ -66,7 +66,6 @@ public class AiEnnemi : MonoBehaviour
             if (faireFeu)
             {
                 Debug.Log("vais je tirer?");
-                cracherFeu();
             }
             else if (startTime >= cadenceDeTir)
             {
@@ -79,17 +78,7 @@ public class AiEnnemi : MonoBehaviour
         }
 
     }
-    public void cracherFeu()
-    {
-        faireFeu = false;
-        GameObject projectile = (GameObject)Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
 
-        Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
-        Debug.Log("j'ai craché!!");
-        body.velocity = positionASuivre;
-        //body.AddForce(transform.forward * vitesseDuTir);
-        //body.AddForceAtPosition(transform.tra * cadenceDeTir);
-    }
     public void enAvantMarche()
     {
         if (this.transform.position.y <= ennemiDepart.y)
