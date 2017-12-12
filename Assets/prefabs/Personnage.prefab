@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 58418392252680710}
   - component: {fileID: 114974951917130388}
   - component: {fileID: 82547383020504180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: kaboum
   m_TagString: Untagged
   m_Icon: {fileID: -6488666005112524639, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114656163374181686}
   - component: {fileID: 212765552269871884}
   - component: {fileID: 114113788183864854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Personnage
   m_TagString: personnage
   m_Icon: {fileID: 0}
