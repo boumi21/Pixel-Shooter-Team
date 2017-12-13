@@ -22,11 +22,6 @@ public class Dragon : Monstre
 
     void Update()
     {
-        base.Update();
-
-        //startTime += Time.deltaTime;
-
-      
-
+        base.Update();        
     }
 }

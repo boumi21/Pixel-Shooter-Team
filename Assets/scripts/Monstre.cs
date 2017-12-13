@@ -6,15 +6,11 @@ public class Monstre : MonoBehaviour
 {
     protected GameObject personnage;
     protected Vector2 positonDuHero;
-    public bool directionDroite = true;
-    public bool heroEstCibler = false;
-    public bool enCorpsACorps = false;
+    public bool directionDroite = true, heroEstCibler = false, enCorpsACorps = false, retour = false;
     protected bool vaSiMords = false;
-    protected float cadenceMorsure = 1.2f;
-    protected float startTime;
+    protected float cadenceMorsure = 1.2f, startTime;
     public int vie = 1;
-    public AudioSource sonCri;
-    public AudioSource saMorsure;
+    public AudioSource sonCri, saMorsure;
     Vector3 scale;
     // personnage = ManegerDeGame.game.gameObject.GetComponent<GenerateurDeNiveaux>().joueur[0];
     // Use this for initialization
@@ -43,6 +39,14 @@ public class Monstre : MonoBehaviour
         {
             heroEstCibler = true;
             sonCri.Play();
+        }
+
+        if(obj.gameObject.tag == "mur")
+        {
+            if (!retour)
+                retour = true;
+            else if(retour)
+                retour = false;
         }
     }
 
