@@ -12,7 +12,7 @@ public class AiEnnemi : MonoBehaviour
     public GameObject pointDepart, pointArrivee, personnage;
     Rigidbody2D leCorps;
     Vector2 ennemiDepart, ennemiDirection;    
-    public bool heroCibler = false, faireFeu = true;
+    public bool heroCibler = false;
     public System.Random hasard;
     public float cadenceDeTir = 3f,startTime, vitesseDeDeplacement = 1.5f;
 
@@ -20,12 +20,12 @@ public class AiEnnemi : MonoBehaviour
     void Start()
     {
         hasard = new System.Random();
-        ennemiDepart = this.transform.position;
+        ennemiDepart = this.transform.localPosition;
         Instantiate(pointDepart, ennemiDepart, Quaternion.identity);
         positionPointArrivee();   
 
         startTime = 0f;
-        ennemiDepart = new Vector2(this.transform.position.x, this.transform.position.y);
+        ennemiDepart = new Vector2(this.transform.localPosition.x, this.transform.localPosition.y);
         ennemiDirection = new Vector2(ennemiDepart.x, ennemiDepart.y+6);
         leCorps = GetComponentInParent<Rigidbody2D>();
     }
@@ -55,7 +55,7 @@ public class AiEnnemi : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    {
+    {        
         startTime = Time.deltaTime;
 
         if(!heroCibler)
@@ -67,17 +67,7 @@ public class AiEnnemi : MonoBehaviour
         }
         else if(heroCibler)
         {
-            enAvantMarche(personnage);
-            /*if (faireFeu)
-            {
-                Debug.Log("vais je tirer?");
-            }
-            else if (startTime >= cadenceDeTir)
-            {
-                startTime = 0;
-                faireFeu = true;
-            }
-             */
+            enAvantMarche(personnage);            
         }
 
     }
@@ -103,33 +93,37 @@ public class AiEnnemi : MonoBehaviour
                 break;
         }
 
-        ennemiDirection = this.transform.position;
+        ennemiDirection = this.transform.localPosition;
         ennemiDirection += voixPrise;
         
         Instantiate(pointArrivee,ennemiDirection, Quaternion.identity);
-        Ray2D myRay = new Ray2D(pointDepart.transform.position, pointArrivee.transform.position);
+        Ray2D myRay = new Ray2D(pointDepart.transform.localPosition, pointArrivee.transform.position);
         
-       //Physics2D.Raycast(myRay);
-
-        
+       //Physics2D.Raycast(myRay);      
         
     }
     
     public void enAvantMarche(GameObject pointASuivre)
     {
          //= point;
-
+        bool retour = GetComponentInParent<Monstre>().retour;
         Vector3 cible = pointASuivre.transform.position;
         //Vector3 monstrePosition = this.transform.position;
         Vector3 moveDirection = cible - this.transform.position;
         Vector3 velocity = leCorps.velocity;
-
-        velocity = moveDirection.normalized;
+        if(moveDirection.magnitude < .1)
+        {
+            if (retour)
+                GetComponentInParent<Monstre>().retour = false;
+            else if(!retour)
+                GetComponentInParent<Monstre>().retour = true;
+        }
+        else
+        {
+            velocity = moveDirection.normalized;
+        }        
 
         leCorps.velocity = velocity;
-
-
-
 
     }
    

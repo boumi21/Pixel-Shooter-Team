@@ -8,6 +8,7 @@ TagManager:
   - BouleFeu
   - Undefined
   - personnage
+  - mur
   layers:
   - Default
   - TransparentFX

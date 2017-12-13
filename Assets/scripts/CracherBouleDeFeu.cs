@@ -5,7 +5,7 @@ using UnityEngine;
 public class CracherBouleDeFeu : MonoBehaviour
 {
     //public AiEnnemi aiEnnemi;
-    public GameObject boucheDragon, bouleDeFeu;
+    public GameObject personnage, bouleDeFeu;
     public float cadenceDeTir = 3f, startTime, vitesseDeTir = 200f;
     public bool faireFeu = false;
     //public bool heroCibler = false;
@@ -37,11 +37,11 @@ public class CracherBouleDeFeu : MonoBehaviour
     public void cracherFeu()
     {
         faireFeu = false;
-        GameObject projectile = (GameObject)Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
         Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
         Debug.Log("j'ai craché!!");
         //body.velocity = 
-        body.AddForce(transform.forward * vitesseDeTir);
+        body.AddForce(personnage.transform.position * vitesseDeTir);
         //body.AddForceAtPosition(transform.tra * cadenceDeTir);
     }
 }

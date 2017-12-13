@@ -37,11 +37,12 @@ public class Monstre : MonoBehaviour
     {
         if(obj.gameObject.tag == "personnage")
         {
+            personnage = obj.gameObject;
             heroEstCibler = true;
             sonCri.Play();
         }
 
-        if(obj.gameObject.tag == "mur")
+        if(obj.gameObject.tag == "mur" || obj.gameObject.tag == "ennemi")
         {
             if (!retour)
                 retour = true;
@@ -56,6 +57,7 @@ public class Monstre : MonoBehaviour
         if (obj.gameObject.tag == "personnage")
         {
             heroEstCibler = true;
+            personnage = obj.gameObject;
         }
     }
 
@@ -64,6 +66,7 @@ public class Monstre : MonoBehaviour
         if (obj.gameObject.tag == "personnage")
         {
             heroEstCibler = false;
+            personnage = null;
         }
     }
     // Update is called once per frame
