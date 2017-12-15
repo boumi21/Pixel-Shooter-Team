@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114067795047898126}
   m_Layer: 8
   m_Name: Dragon
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,7 +384,6 @@ MonoBehaviour:
   personnage: {fileID: 1659770953591784, guid: 6a1dfe0a3cdfe8f49bda1dc6490f56ab, type: 2}
   monstre: {fileID: 1329855080766130}
   heroCibler: 0
-  cadenceDeTir: 3
   startTime: 0
   vitesseDeDeplacement: 0.25
 --- !u!212 &212012815907072678
