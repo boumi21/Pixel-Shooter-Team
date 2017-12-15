@@ -377,15 +377,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0dc4b4a38649448967f009383a4365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointDepart: {fileID: 1584219318955348, guid: f2c485c5f0af919438d6d5915ed17d3f,
-    type: 2}
-  pointArrivee: {fileID: 1437462072418074, guid: 3f50642c523cbc4478da2c3595177be4,
-    type: 2}
+  patrouille:
+  - {fileID: 1584219318955348, guid: f2c485c5f0af919438d6d5915ed17d3f, type: 2}
+  - {fileID: 1437462072418074, guid: 3f50642c523cbc4478da2c3595177be4, type: 2}
+  pointASuivre: 0
   personnage: {fileID: 1659770953591784, guid: 6a1dfe0a3cdfe8f49bda1dc6490f56ab, type: 2}
+  monstre: {fileID: 1329855080766130}
   heroCibler: 0
   cadenceDeTir: 3
   startTime: 0
-  vitesseDeDeplacement: 100
+  vitesseDeDeplacement: 0.25
 --- !u!212 &212012815907072678
 SpriteRenderer:
   m_ObjectHideFlags: 1

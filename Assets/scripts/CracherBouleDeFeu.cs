@@ -40,7 +40,7 @@ public class CracherBouleDeFeu : MonoBehaviour
         GameObject projectile = Instantiate(bouleDeFeu, this.transform.position, Quaternion.identity);
         Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
         Debug.Log("j'ai craché!!");
-        //body.velocity = 
+        body.velocity = personnage.transform.position;
         body.AddForce(personnage.transform.position * vitesseDeTir);
         //body.AddForceAtPosition(transform.tra * cadenceDeTir);
     }

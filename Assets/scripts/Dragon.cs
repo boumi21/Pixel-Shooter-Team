@@ -13,7 +13,7 @@ public class Dragon : Monstre
     {
         base.Start();
         
-        Debug.Log("un Dragon start");
+        //Debug.Log("un Dragon start");
     }
 	
 	// Update is called once per frame

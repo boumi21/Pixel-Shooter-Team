@@ -9,25 +9,27 @@ using System;
 public class AiEnnemi : MonoBehaviour
 {
 
-    public GameObject pointDepart, pointArrivee, personnage;
+    public GameObject[] patrouille;
+    public int pointASuivre = 0;
+    public GameObject personnage;
+    public GameObject monstre;
     Rigidbody2D leCorps;
     Vector2 ennemiDepart, ennemiDirection;    
     public bool heroCibler = false;
     public System.Random hasard;
-    public float cadenceDeTir = 3f,startTime, vitesseDeDeplacement = 1.5f;
+    public float startTime, vitesseDeDeplacement = .25f;
 
     // Use this for initialization 
     void Start()
     {
         hasard = new System.Random();
-        ennemiDepart = this.transform.localPosition;
-        Instantiate(pointDepart, ennemiDepart, Quaternion.identity);
-        positionPointArrivee();   
-
+        ennemiDepart = this.transform.position;
+        Instantiate(patrouille[0], ennemiDepart, Quaternion.identity);
+        positionPointArrivee();  
         startTime = 0f;
-        ennemiDepart = new Vector2(this.transform.localPosition.x, this.transform.localPosition.y);
-        ennemiDirection = new Vector2(ennemiDepart.x, ennemiDepart.y+6);
-        leCorps = GetComponentInParent<Rigidbody2D>();
+        //ennemiDepart = new Vector2(this.transform.localPosition.x, this.transform.localPosition.y);
+        //ennemiDirection = new Vector2(ennemiDepart.x, ennemiDepart.y+6);
+        leCorps = monstre.GetComponent<Rigidbody2D>();
     }
 
     void OnTriggerEnter2D(Collider2D obj)
@@ -60,14 +62,35 @@ public class AiEnnemi : MonoBehaviour
 
         if(!heroCibler)
         {
-            if (!GetComponentInParent<Monstre>().retour)
-                enAvantMarche(pointArrivee);
-            else if (GetComponentInParent<Monstre>().retour)
-                enAvantMarche(pointDepart);
+            if (pointASuivre < patrouille.Length)
+            {
+                GameObject pointVisee;
+                pointVisee = patrouille[pointASuivre];
+                //bool retour = GetComponentInParent<Monstre>().retour;
+                Vector2 cible = pointVisee.transform.position;
+                //Vector3 monstrePosition = this.transform.position;
+                Vector2 moveDirection = cible - (Vector2)transform.position;
+                Vector2 velocity = leCorps.velocity;
+
+                if (moveDirection.magnitude < 0.1)
+                {
+                    pointASuivre++;
+                }
+                else
+                {
+                    velocity = moveDirection.normalized * vitesseDeDeplacement;
+                }
+
+                leCorps.velocity = velocity;
+            }
+            else
+            {
+                //pointASuivre = 0;
+            }
         }
         else if(heroCibler)
         {
-            enAvantMarche(personnage);            
+           // enAvantMarche(personnage);            
         }
 
     }
@@ -76,7 +99,7 @@ public class AiEnnemi : MonoBehaviour
     {
         int direction = hasard.Next(0, 4);  
         Vector2 voixPrise = new Vector2();
-        int ajout = 6;
+        int ajout = 3;
         switch(direction)
         {
             case 0:
@@ -93,11 +116,11 @@ public class AiEnnemi : MonoBehaviour
                 break;
         }
 
-        ennemiDirection = this.transform.localPosition;
+        ennemiDirection = this.transform.position;
         ennemiDirection += voixPrise;
         
-        Instantiate(pointArrivee,ennemiDirection, Quaternion.identity);
-        Ray2D myRay = new Ray2D(pointDepart.transform.localPosition, pointArrivee.transform.position);
+        Instantiate(patrouille[1],ennemiDirection, Quaternion.identity);
+        //Ray2D myRay = new Ray2D(pointDepart.transform.localPosition, pointArrivee.transform.position);
         
        //Physics2D.Raycast(myRay);      
         
@@ -111,7 +134,7 @@ public class AiEnnemi : MonoBehaviour
         //Vector3 monstrePosition = this.transform.position;
         Vector3 moveDirection = cible - this.transform.position;
         Vector3 velocity = leCorps.velocity;
-        if(moveDirection.magnitude < .1)
+        if(moveDirection.magnitude < 0)
         {
             if (retour)
                 GetComponentInParent<Monstre>().retour = false;
@@ -120,7 +143,7 @@ public class AiEnnemi : MonoBehaviour
         }
         else
         {
-            velocity = moveDirection.normalized;
+            velocity = moveDirection.normalized * vitesseDeDeplacement;
         }        
 
         leCorps.velocity = velocity;
