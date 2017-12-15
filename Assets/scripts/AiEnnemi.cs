@@ -14,21 +14,21 @@ public class AiEnnemi : MonoBehaviour
     public GameObject personnage;
     public GameObject monstre;
     Rigidbody2D leCorps;
-    Vector2 ennemiDepart, ennemiDirection;    
+    Vector2 ennemiDepart, ennemiDirection, personnagePosition;    
     public bool heroCibler = false;
     public System.Random hasard;
-    public float startTime, vitesseDeDeplacement = .25f;
+    public float startTime, vitesseDeDeplacement = 133.25f;
 
     // Use this for initialization 
     void Start()
     {
+        
         hasard = new System.Random();
-        ennemiDepart = this.transform.position;
-        Instantiate(patrouille[0], ennemiDepart, Quaternion.identity);
+        personnagePosition = (Vector2)personnage.transform.position;
+        ennemiDepart = (Vector2)monstre.transform.position;
+        Instantiate(patrouille[1], ennemiDepart, Quaternion.identity);
         positionPointArrivee();  
         startTime = 0f;
-        //ennemiDepart = new Vector2(this.transform.localPosition.x, this.transform.localPosition.y);
-        //ennemiDirection = new Vector2(ennemiDepart.x, ennemiDepart.y+6);
         leCorps = monstre.GetComponent<Rigidbody2D>();
     }
 
@@ -59,6 +59,9 @@ public class AiEnnemi : MonoBehaviour
     void Update()
     {        
         startTime = Time.deltaTime;
+        personnagePosition = (Vector2)personnage.transform.position;
+        patrouille[0].transform.position = ennemiDirection;
+        patrouille[1].transform.position = ennemiDepart;
 
         if(!heroCibler)
         {
@@ -66,31 +69,32 @@ public class AiEnnemi : MonoBehaviour
             {
                 GameObject pointVisee;
                 pointVisee = patrouille[pointASuivre];
-                //bool retour = GetComponentInParent<Monstre>().retour;
-                Vector2 cible = pointVisee.transform.position;
-                //Vector3 monstrePosition = this.transform.position;
+                Vector2 cible = (Vector2)pointVisee.transform.position;
+                Debug.Log("départ" + ennemiDepart.x + " et " + ennemiDepart.y);
+                Debug.Log("arrivé" + ennemiDirection.x + " et " + ennemiDirection.y);
                 Vector2 moveDirection = cible - (Vector2)transform.position;
                 Vector2 velocity = leCorps.velocity;
 
-                if (moveDirection.magnitude < 1)
+                if (moveDirection.magnitude < .1)
                 {
                     pointASuivre++;
                 }
                 else
                 {
                     velocity = moveDirection.normalized * vitesseDeDeplacement;
+                    
                 }
 
-                leCorps.velocity = velocity;
+                leCorps.MovePosition(leCorps.position + velocity * Time.fixedDeltaTime);
             }
             else
             {
-                //pointASuivre = 0;
+                pointASuivre = 0;
             }
         }
         else if(heroCibler)
         {
-           // enAvantMarche(personnage);            
+           enAvantMarche(personnage);            
         }
 
     }
@@ -116,10 +120,10 @@ public class AiEnnemi : MonoBehaviour
                 break;
         }
 
-        ennemiDirection = this.transform.position;
+        ennemiDirection = (Vector2)this.transform.position;
         ennemiDirection += voixPrise;
         
-        Instantiate(patrouille[1],ennemiDirection, Quaternion.identity);
+        Instantiate(patrouille[0],ennemiDirection, Quaternion.identity);
         //Ray2D myRay = new Ray2D(pointDepart.transform.localPosition, pointArrivee.transform.position);
         
        //Physics2D.Raycast(myRay);      
@@ -128,25 +132,17 @@ public class AiEnnemi : MonoBehaviour
     
     public void enAvantMarche(GameObject pointASuivre)
     {
-         //= point;
-        bool retour = GetComponentInParent<Monstre>().retour;
-        Vector3 cible = pointASuivre.transform.position;
-        //Vector3 monstrePosition = this.transform.position;
-        Vector3 moveDirection = cible - this.transform.position;
-        Vector3 velocity = leCorps.velocity;
-        if(moveDirection.magnitude < 0)
-        {
-            if (retour)
-                GetComponentInParent<Monstre>().retour = false;
-            else if(!retour)
-                GetComponentInParent<Monstre>().retour = true;
-        }
-        else
-        {
-            velocity = moveDirection.normalized * vitesseDeDeplacement;
-        }        
+        GameObject pointVisee;
+        pointVisee = personnage;
+        Vector2 cible = (Vector2)pointVisee.transform.position;
+        Debug.Log("départ" + ennemiDepart.x + " et " + ennemiDepart.y);
+        Debug.Log("arrivé" + ennemiDirection.x + " et " + ennemiDirection.y);
+        Vector2 moveDirection = cible - (Vector2)transform.position;
+        Vector2 velocity = leCorps.velocity;
 
-        leCorps.velocity = velocity;
+        velocity = moveDirection.normalized * vitesseDeDeplacement;
+
+        leCorps.MovePosition(leCorps.position + velocity * Time.fixedDeltaTime);
 
     }
    

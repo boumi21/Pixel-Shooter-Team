@@ -6,7 +6,7 @@ public class CracherBouleDeFeu : MonoBehaviour
 {
     //public AiEnnemi aiEnnemi;
     public GameObject personnage, bouleDeFeu;
-    public float cadenceDeTir = 3f, startTime, vitesseDeTir = 200f;
+    public float cadenceDeTir = 3f, startTime, vitesseDuTir = 400f;
     public bool faireFeu = false;
     //public bool heroCibler = false;
 	// Use this for initialization
@@ -41,7 +41,7 @@ public class CracherBouleDeFeu : MonoBehaviour
         Rigidbody2D body = projectile.GetComponent<Rigidbody2D>();
         Debug.Log("j'ai craché!!");
         body.velocity = personnage.transform.position;
-        body.AddForce(personnage.transform.position * vitesseDeTir);
+        body.AddForce(personnage.transform.position * vitesseDuTir);
         //body.AddForceAtPosition(transform.tra * cadenceDeTir);
     }
 }

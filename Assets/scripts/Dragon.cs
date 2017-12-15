@@ -6,7 +6,7 @@ public class Dragon : Monstre
 {
 
    
-    private float vitesseDuTir = 400f;
+    
 
  
 	void Start()

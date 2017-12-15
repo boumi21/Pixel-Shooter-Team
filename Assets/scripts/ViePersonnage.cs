@@ -15,7 +15,7 @@ public class ViePersonnage : MonoBehaviour {
 	}
 	IEnumerable attendre()
 	{
-		yield return new WaitForSeconds (1);
+		yield return new WaitForSeconds (2);
 	}
 
 }
