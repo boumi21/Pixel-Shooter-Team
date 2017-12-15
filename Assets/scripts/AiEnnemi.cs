@@ -72,7 +72,7 @@ public class AiEnnemi : MonoBehaviour
                 Vector2 moveDirection = cible - (Vector2)transform.position;
                 Vector2 velocity = leCorps.velocity;
 
-                if (moveDirection.magnitude < 0.1)
+                if (moveDirection.magnitude < 1)
                 {
                     pointASuivre++;
                 }
